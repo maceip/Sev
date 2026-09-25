@@ -1,0 +1,148 @@
+{
+  "version": 1,
+  "purpose": "Authored-policy research release subset; exploratory development evaluation, not a final-test suite",
+  "base_revisions": {
+    "Qwen/Qwen3.5-0.8B-Base": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+    "Qwen/Qwen3.5-4B-Base": "1001bb4d826a52d1f399e183466143f4da7b741b",
+    "Qwen/Qwen3.5-9B-Base": "68c46c4b3498877f3ef123c856ecfde50c39f404"
+  },
+  "dataset_revisions": {},
+  "context": {
+    "max_state": 384,
+    "max_branch": 1024,
+    "max_packed": 2048,
+    "truncate": false
+  },
+  "trainable_sources": [
+    "compositional",
+    "legacy_policy",
+    "sev_behavioral_artifact_handoff",
+    "sev_behavioral_authorized_export",
+    "sev_behavioral_lookup_catalog",
+    "sev_behavioral_update_export"
+  ],
+  "holdout_sources": [
+    "sev_behavioral_retry_export",
+    "sev_behavioral_stale_handoff",
+    "sev_behavioral_reconcile_export"
+  ],
+  "eval_only_sources": [],
+  "eval_only": false,
+  "parents": {
+    "behavioral": {
+      "path": "evals/sev/behavioral-v1",
+      "manifest_sha256": "e58817602f9b08fac634ebe059365058e030c0006fced2578b02d7b4a67d76f0"
+    },
+    "replay": {
+      "path": "evals/v7/decision-v7",
+      "manifest_sha256": "a8f50e481b7d90b97da049e0ff6a01cee2f1ed204aed61a8265af0edbb5514d2"
+    },
+    "screen": {
+      "path": "evals/sev/behavioral-screen-v1",
+      "manifest_sha256": "9114ff9f01b03f299d2a9468b8decb77af116ec7445c42fdd987ee8bbc201bf6",
+      "manifest_copy": "input-manifest.json",
+      "partitions": {
+        "train.jsonl": {
+          "sha256": "64e54f3c196b194e15375a54d28e62f9a0a12e4bc34f6494d266db475abe1ff9",
+          "records": 2734
+        },
+        "calibration.jsonl": {
+          "sha256": "eebb5ddeb322b16bbb312ddb6927b1d71226b72e4b01d323c698d1e2a3c4f38d",
+          "records": 482
+        },
+        "development.jsonl": {
+          "sha256": "bd76cba90825cfb2699ff8a4419c99f7b395541ed1cfe51c4a69305451f659e5",
+          "records": 1265
+        },
+        "test.jsonl": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "records": 0
+        }
+      }
+    }
+  },
+  "sampling": {
+    "train": {
+      "lookup_catalog": 32,
+      "authorized_export": 32,
+      "artifact_handoff": 32,
+      "update_export": 32
+    },
+    "calibration": {
+      "lookup_catalog": 8,
+      "authorized_export": 8,
+      "artifact_handoff": 8,
+      "update_export": 8
+    },
+    "development": {
+      "lookup_catalog": 8,
+      "authorized_export": 8,
+      "artifact_handoff": 8,
+      "update_export": 8,
+      "retry_export": 16,
+      "stale_handoff": 16
+    }
+  },
+  "replay": {
+    "rows": 240,
+    "source_counts": {
+      "compositional": 160,
+      "legacy_policy": 80
+    },
+    "complete_groups_per_source": 40,
+    "group_counts": {
+      "compositional": 40,
+      "legacy_policy": 40
+    },
+    "description": "Unchanged upstream decision-v7 authored compositional and legacy_policy rule records. These are not the retired Sev enterprise synthetic traces."
+  },
+  "selection": "Remove only the ten public replay sources from the pinned screen. Retain complete groups and original row bytes in their original order. Copy calibration, development and the empty screen test byte-for-byte. Context admission is inherited from the unchanged input records.",
+  "test": "The copied screen test is empty. No original behavioral-v1 locked test was accessed. Calibration and development are previously used research partitions.",
+  "builder_sha256": "b5f60eec03e1181f8c6ef8e44b0f90d05e1221f669041729bfa3ac28ad4fe3a6",
+  "files": {
+    "train.jsonl": {
+      "sha256": "0aa668b5cc927db65e6b7a0890bc47ff7061d0ec271ff239d7d120f362964a6e",
+      "records": 2334
+    },
+    "calibration.jsonl": {
+      "sha256": "eebb5ddeb322b16bbb312ddb6927b1d71226b72e4b01d323c698d1e2a3c4f38d",
+      "records": 482
+    },
+    "development.jsonl": {
+      "sha256": "bd76cba90825cfb2699ff8a4419c99f7b395541ed1cfe51c4a69305451f659e5",
+      "records": 1265
+    },
+    "test.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "records": 0
+    }
+  },
+  "name": "behavioral-research-v1",
+  "filter": {
+    "input_train_rows": 2734,
+    "retained_train_rows": 2334,
+    "behavioral_rows": 2094,
+    "authored_replay_rows": 240,
+    "removed_public_rows": 400,
+    "removed_sources": {
+      "agnews": 40,
+      "amazon": 40,
+      "banking77": 40,
+      "boolq": 40,
+      "dbpedia14": 40,
+      "imdb": 40,
+      "mnli": 40,
+      "sst5": 40,
+      "trec": 40,
+      "yelp": 40
+    },
+    "retained_source_counts": {
+      "sev_behavioral_lookup_catalog": 391,
+      "sev_behavioral_update_export": 533,
+      "sev_behavioral_artifact_handoff": 739,
+      "sev_behavioral_authorized_export": 431,
+      "compositional": 160,
+      "legacy_policy": 80
+    }
+  }
+}

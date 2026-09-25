@@ -1,0 +1,12 @@
+Sev research preview
+
+Sev is derived from Kev, Copyright 2026 Jared Palmer, under Apache-2.0.
+Sev research additions are Copyright 2026 the Sev contributors.
+The Qwen3.5 base model is provided by the Qwen team under Apache-2.0.
+The released adapter is initialized from jaredpalmer/kev-4b.
+
+The Apache-2.0 source/model license does not relicense third-party datasets.
+Original behavioral simulator records use CC BY 4.0 as described in
+research/collector/DATA_LICENSE. Authored Kev replay rules retain Apache-2.0
+and upstream attribution. Private captures and raw third-party replay are
+not included in the new Sev dataset or checkpoint artifacts.

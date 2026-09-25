@@ -1,0 +1,86 @@
+{
+  "schema": "sev-research-calibration-sources-v1",
+  "split": "calibration",
+  "view": "full",
+  "temperature": 1.9999999999999998,
+  "weighting": "equal episodes, then equal windows within each episode",
+  "partition_sha256": "eebb5ddeb322b16bbb312ddb6927b1d71226b72e4b01d323c698d1e2a3c4f38d",
+  "predictions": {
+    "path": "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/calibration/rows.json",
+    "sha256": "00909b4d6b838c534d8d403d84a578fea1ddaac5e30a2b488c2d1c138c0d05ab"
+  },
+  "sources": {
+    "sev_behavioral_artifact_handoff": {
+      "windows": 63,
+      "episodes": 24,
+      "groups": 8,
+      "record_ids_sha256": "ec2841fda8a390bd2d73d828e1d3efac393d6cc583f94188ef25588a85945877",
+      "raw": {
+        "acc": 0.34722222222222215,
+        "nll": 1.0806702183699979,
+        "brier": 0.6537004910585257,
+        "ece": 0.09166280712269316
+      },
+      "calibrated": {
+        "acc": 0.34722222222222215,
+        "nll": 1.0876702845061252,
+        "brier": 0.6589248476452055,
+        "ece": 0.04426971102023442
+      }
+    },
+    "sev_behavioral_authorized_export": {
+      "windows": 40,
+      "episodes": 24,
+      "groups": 8,
+      "record_ids_sha256": "255e72d055b44aa16ec7f11fe905f4c251fe28ced7f801120abef039c930115f",
+      "raw": {
+        "acc": 0.3333333333333333,
+        "nll": 1.104011417056653,
+        "brier": 0.6698152020985213,
+        "ece": 0.04556619047184074
+      },
+      "calibrated": {
+        "acc": 0.3333333333333333,
+        "nll": 1.0996799880244128,
+        "brier": 0.6672264414223563,
+        "ece": 0.04735674179920909
+      }
+    },
+    "sev_behavioral_lookup_catalog": {
+      "windows": 25,
+      "episodes": 24,
+      "groups": 8,
+      "record_ids_sha256": "8cd835d6e3fefa25803ffbc579240aa9c4ae264163027eaa186db00580e4b2e1",
+      "raw": {
+        "acc": 0.3333333333333333,
+        "nll": 1.0929036665832168,
+        "brier": 0.6633979694737079,
+        "ece": 0.10676289475303495
+      },
+      "calibrated": {
+        "acc": 0.3333333333333333,
+        "nll": 1.087115774278896,
+        "brier": 0.6586049595361453,
+        "ece": 0.052123650581165686
+      }
+    },
+    "sev_behavioral_update_export": {
+      "windows": 54,
+      "episodes": 24,
+      "groups": 8,
+      "record_ids_sha256": "f83b45d350186cfa47db970f9311408fbde0fb68bb884adc1a3644a36b18f52c",
+      "raw": {
+        "acc": 0.3229166666666667,
+        "nll": 1.11786418934943,
+        "brier": 0.6813036856150539,
+        "ece": 0.09059596392971296
+      },
+      "calibrated": {
+        "acc": 0.3229166666666667,
+        "nll": 1.1024371940848587,
+        "brier": 0.6695271712596828,
+        "ece": 0.060665733732341603
+      }
+    }
+  }
+}

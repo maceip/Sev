@@ -95,6 +95,8 @@ def run_trial(study, index, label, config, suite, expected_sources, git_commit, 
     os.environ["KEV_GIT_COMMIT"] = git_commit
     if source_hashes() != expected_sources:
         raise RuntimeError("container received different kev/*.py than the launcher hashed")
+    if existing and existing.startswith(RUNS_MOUNT + "/"):
+        runs_volume.reload()  # A reused container may predate another trial's checkpoint commit.
     out = Path(RUNS_MOUNT) / study / f"{index:02d}-{label}"
     if out.exists():
         raise FileExistsError(f"refusing to overwrite remote trial: {out}")
@@ -106,6 +108,25 @@ def run_trial(study, index, label, config, suite, expected_sources, git_commit, 
         hf_cache.commit()
     return {"label": label, "objective": report["objective"], "clean_acc": report["clean"]["acc"],
             "wall_seconds": report["wall_seconds"], "gates": report["gates"]["checks"]}
+
+
+@app.function(image=image, gpu=GPU, cpu=TRIAL_CPU, memory=TRIAL_MEMORY, retries=0, timeout=1800,
+              volumes={RUNS_MOUNT: runs_volume, HF_MOUNT: hf_cache}, secrets=secrets)
+def run_isolation(study, index, label, config, suite, expected_sources, git_commit, existing=None, transfer=None):
+    """Read-only numerical probe through the same reserved-job interface as studies."""
+    from kev.experiment import source_hashes
+    from scripts.sev_isolation import run
+    if config or not existing or source_hashes() != expected_sources:
+        raise ValueError("isolation requires an existing checkpoint and matching source hashes")
+    os.environ["KEV_GIT_COMMIT"] = git_commit
+    runs_volume.reload()
+    suites = [Path("/root") / path for path in (suite, transfer) if path]
+    try:
+        report = run(existing, suites, Path(RUNS_MOUNT) / study / f"{index:02d}-{label}")
+    finally:
+        runs_volume.commit()
+        hf_cache.commit()
+    return {"label": label, "wall_seconds": report["wall_seconds"]}
 
 
 @app.function(image=image, gpu=GPU, cpu=2, memory=(32768, 49152), retries=0, timeout=3600,
@@ -317,14 +338,17 @@ def admit_study(suite, plan_path, name, gpu, existing, transfer, budget, timeout
     if subprocess.run(["git", "status", "--porcelain", "kev", "evals"], cwd=ROOT, capture_output=True, text=True).stdout.strip():
         print("warning: kev/ or evals/ has uncommitted changes; provenance records the last commit, not the working tree", flush=True)
     entries = [(None, p) for p in existing] + [(t, None) for t in trials]
-    return [Job(name, i, Path(ex).name if ex else f"trial-{i}", cfg or {}, suite, sources, commit, ex, transfer) for i, (cfg, ex) in enumerate(entries)], upper
+    labels = [Path(ex).name if ex else f"trial-{i}" for i, (_, ex) in enumerate(entries)]
+    return [Job(name, i, f"{label}-{i}" if labels.count(label) > 1 else label,
+                cfg or {}, suite, sources, commit, ex, transfer)
+            for i, ((cfg, ex), label) in enumerate(zip(entries, labels))], upper
 
 
-def deployed_run_trial(sources):
+def deployed_run_trial(sources, worker="run_trial"):
     """run_trial on the *deployed* app (modal deploy modal_app.py), after checking it ships this checkout's kev/*.py.
     Spawns on the ephemeral app die with the local client; the deployed app has no parent to lose."""
     try:
-        target = modal.Function.from_name(APP_NAME, "run_trial"); target.hydrate()
+        target = modal.Function.from_name(APP_NAME, worker); target.hydrate()
         deployed_sources = modal.Function.from_name(APP_NAME, "remote_source_hashes").remote()
     except Exception as error:
         raise SystemExit(f"deployed app not usable ({type(error).__name__}: {str(error)[:120]}); run `uv run modal deploy modal_app.py` first")
@@ -334,12 +358,12 @@ def deployed_run_trial(sources):
     return target
 
 
-def launch_detached(suite, plan_path, name, gpu, existing=(), transfer=None, budget=20.0, timeout=1800):
+def launch_detached(suite, plan_path, name, gpu, existing=(), transfer=None, budget=20.0, timeout=1800, worker="run_trial"):
     """Validate locally, spawn every trial as its own call on the deployed app, record the call ids and return. Results
     land on the volume; `pull --name` collects and ranks them."""
     from kev.suite import write_json
     jobs, upper = admit_study(suite, plan_path, name, gpu, existing, transfer, budget, timeout)
-    fn = deployed_run_trial(local_source_hashes()).with_options(gpu=gpu, timeout=timeout, retries=0)
+    fn = deployed_run_trial(local_source_hashes(), worker).with_options(gpu=gpu, timeout=timeout, retries=0)
     calls = [fn.spawn(*job) for job in jobs]
     (ROOT / "runs").mkdir(exist_ok=True)
     write_json(ROOT / "runs" / f"{name}.spawn.json", {"name": name, "calls": {j.label: c.object_id for j, c in zip(jobs, calls)}, "bound_usd": round(upper, 2), "timeout": timeout})
@@ -387,6 +411,15 @@ def study(suite: str, plan: str, name: str, gpu: str = GPU, existing: str = "", 
     detached=False runs attached (pulls automatically, but dies with the local client)."""
     if detached: launch_detached(suite, plan, name, gpu, [e for e in existing.split(",") if e], transfer or None, budget, timeout)
     else: launch(suite, plan, name, gpu, [e for e in existing.split(",") if e], transfer or None, budget, timeout)
+
+
+@app.local_entrypoint()
+def isolation(suite: str, name: str, existing: str, plan: str = "", transfer: str = "", gpu: str = GPU, budget: float = 20.0, timeout: int = 1800):
+    """Probe repeatability, batch shape and sibling content without changing model code."""
+    if plan or not 60 <= timeout <= 1800:
+        raise ValueError("isolation takes no training plan and has a maximum 1800-second timeout")
+    launch_detached(suite, "", name, gpu, [e for e in existing.split(",") if e], transfer or None,
+                    budget, timeout, worker="run_isolation")
 
 
 @app.function(image=image, gpu=GPU, cpu=2, memory=(32768, 49152), retries=0, timeout=7200,

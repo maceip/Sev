@@ -150,8 +150,18 @@ def gate_report(report, checks, baseline=None):
     if baseline is not None:
         gates["no_task_accuracy_regression_over_5pp"] = all(report["tasks"][k]["acc"] >= v["acc"] - GATES["task_accuracy_regression"] for k, v in baseline["tasks"].items())
         for variant in ("none_present", "none_absent"):
-            gates[f"{variant}_not_worse"] = report["variants"][variant]["acc"] >= baseline["variants"][variant]["acc"] - GATES["variant_accuracy_regression"]
-        gates["permutation_not_worse"] = report["permutation"]["flip_rate"] <= baseline["permutation"]["flip_rate"] + GATES["permutation_flip_increase"]
+            candidate, reference = report["variants"].get(variant), baseline["variants"].get(variant)
+            if (candidate is None) != (reference is None):
+                raise ValueError(f"{variant} coverage differs from baseline")
+            if candidate is not None:
+                if candidate["n"] != reference["n"]:
+                    raise ValueError(f"{variant} question count differs from baseline")
+                gates[f"{variant}_not_worse"] = candidate["acc"] >= reference["acc"] - GATES["variant_accuracy_regression"]
+        permutation, reference = report["permutation"], baseline["permutation"]
+        if permutation["n"] != reference["n"]:
+            raise ValueError("permutation coverage differs from baseline")
+        if permutation["n"]:
+            gates["permutation_not_worse"] = permutation["flip_rate"] <= reference["flip_rate"] + GATES["permutation_flip_increase"]
     transfer = report.get("transfer")
     if transfer:
         c = transfer["coverage"]

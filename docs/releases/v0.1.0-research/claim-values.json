@@ -1,0 +1,6 @@
+{
+  "source": "paired-report.json",
+  "source_sha256": "14c148b41d9c5070f2800b938daf6e647ea3019cafcd2046f739226177469c64",
+  "iid_gain_ci95_low": 0.0,
+  "iid_gain_ci95_high": 0.017361111111111105
+}

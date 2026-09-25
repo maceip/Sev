@@ -1,0 +1,956 @@
+{
+  "schema": "sev-research-independent-evaluation-v1",
+  "created_at": "2026-09-25T16:42:32.814870+00:00",
+  "pass": true,
+  "suite_manifest_sha256": "372d8709cce5fc50262afc5107cd4b3637614ff2b2a7e84a8ccfa4293a4b21c5",
+  "input_sha256": {
+    "/Users/mac/Sev/runs/sev-research-release-20260925/paired-report.json": "14c148b41d9c5070f2800b938daf6e647ea3019cafcd2046f739226177469c64",
+    "/Users/mac/Sev-release-20260925/evals/sev/behavioral-research-v1/manifest.json": "372d8709cce5fc50262afc5107cd4b3637614ff2b2a7e84a8ccfa4293a4b21c5",
+    "/Users/mac/Sev-release-20260925/evals/sev/behavioral-research-v1/calibration.jsonl": "eebb5ddeb322b16bbb312ddb6927b1d71226b72e4b01d323c698d1e2a3c4f38d",
+    "/Users/mac/Sev-release-20260925/evals/sev/behavioral-research-v1/development.jsonl": "bd76cba90825cfb2699ff8a4419c99f7b395541ed1cfe51c4a69305451f659e5",
+    "/Users/mac/Sev/runs/sev-r2-behavioral-4b-parents-v1/00-kev-4b@485ace8703592fcf405488b262449990824cfed1/calibration/rows.json": "e307a8170f6c1c159e252c8e6c55c88f51e37a784e0a4579bd5625c6742952cf",
+    "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/calibration/rows.json": "00909b4d6b838c534d8d403d84a578fea1ddaac5e30a2b488c2d1c138c0d05ab",
+    "/Users/mac/Sev/runs/sev-r2-behavioral-4b-parents-v1/00-kev-4b@485ace8703592fcf405488b262449990824cfed1/development/rows.json": "9ca8eeeb877ea120e5f4c5d54fa72f9bf31f200bbf460e14e6ec85c223162d56",
+    "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/development/rows.json": "994e39a231bc64037f392e606c5fbd3c455f79e68f7b34ba44517238b269b26a"
+  },
+  "test_read": false,
+  "method": {
+    "point_metrics": "Independent NumPy log-softmax NLL, multiclass Brier and ten-bin weighted ECE. Raw confidence/Brier use saved float32 probabilities to match the documented canonical metric contract; tempered probabilities come from logits. Every episode has total weight one divided over its original full-view windows. No probability ensemble.",
+    "paired_intervals": "Independent paired 1000-draw seed-0 percentile bootstrap by group_id alone. Group draw multiplicities applied to row weights. All accuracy/NLL/Brier/ECE point values and interval endpoints match paired-report.json within 1e-12.",
+    "temperature": "Independent 121-point log-grid minimization of full calibration NLL with equal episode weights. Development labels do not fit temperatures. Intervals condition on the calibration fits.",
+    "joins": "All calibration/development predictions match frozen IDs, class order, targets, groups and episodes. Inference temperature is 1.0; saved probabilities match logits within 1e-5. No input hash changed.",
+    "maximum_point_discrepancy": 1.5543122344752192e-15
+  },
+  "calibration": {
+    "full_equal_episode_temperatures": {
+      "parent": 4.0,
+      "candidate": 1.9999999999999998
+    },
+    "candidate_experiment_micro_temperature": 1.0717734625362931,
+    "parent_grid_upper_bound": 4.0,
+    "windows": 182,
+    "episodes": 96,
+    "groups": 32,
+    "calibration_metrics_are_in_sample": true
+  },
+  "panels": {
+    "calibration/full/all/all": {
+      "windows": 182,
+      "episodes": 96,
+      "groups": 32,
+      "episode_weight_sum": 96.0,
+      "raw": {
+        "parent": {
+          "acc": 0.3333333333333333,
+          "nll": 1.7039948885030407,
+          "brier": 0.9366734114222882,
+          "ece": 0.3836640270561081,
+          "nll_minus_uniform": 0.6053825998349309
+        },
+        "candidate": {
+          "acc": 0.3342013888888888,
+          "nll": 1.0988623728398248,
+          "brier": 0.6670543370614525,
+          "ece": 0.06554797243603248,
+          "nll_minus_uniform": 0.00025008417171501485
+        }
+      },
+      "calibrated": {
+        "parent": {
+          "acc": 0.3333333333333333,
+          "nll": 1.1516241769020006,
+          "brier": 0.7011284844520594,
+          "ece": 0.11261178491667191,
+          "nll_minus_uniform": 0.0530118882338908
+        },
+        "candidate": {
+          "acc": 0.3342013888888888,
+          "nll": 1.0942258102235733,
+          "brier": 0.6635708549658471,
+          "ece": 0.04216089485176933,
+          "nll_minus_uniform": -0.004386478444536435
+        }
+      }
+    },
+    "development/full/iid/all": {
+      "windows": 196,
+      "episodes": 96,
+      "groups": 32,
+      "episode_weight_sum": 96.0,
+      "raw": {
+        "parent": {
+          "acc": 0.3333333333333332,
+          "nll": 1.712452357373193,
+          "brier": 0.9303227524837444,
+          "ece": 0.40316209525167973,
+          "nll_minus_uniform": 0.6138400687050831
+        },
+        "candidate": {
+          "acc": 0.3402777777777777,
+          "nll": 1.114185953853556,
+          "brier": 0.6767587666407534,
+          "ece": 0.0658244924811593,
+          "nll_minus_uniform": 0.015573665185446117
+        },
+        "paired": {
+          "acc": {
+            "candidate_minus_parent": 0.006944444444444475,
+            "ci95": [
+              -5.551115123125783e-17,
+              0.01736111111111116
+            ],
+            "parent_ci95": [
+              0.3333333333333332,
+              0.3333333333333334
+            ],
+            "candidate_ci95": [
+              0.33333333333333326,
+              0.3506944444444444
+            ]
+          },
+          "nll": {
+            "candidate_minus_parent": -0.598266403519637,
+            "ci95": [
+              -0.6785650197211481,
+              -0.5198138791551934
+            ],
+            "parent_ci95": [
+              1.6411516919873783,
+              1.7821554572493037
+            ],
+            "candidate_ci95": [
+              1.0932970868965703,
+              1.1377853746292819
+            ]
+          },
+          "brier": {
+            "candidate_minus_parent": -0.253563985842991,
+            "ci95": [
+              -0.2882144767124644,
+              -0.2179524081333052
+            ],
+            "parent_ci95": [
+              0.9005605959813184,
+              0.9600325280394626
+            ],
+            "candidate_ci95": [
+              0.6623924005681694,
+              0.6929750831612851
+            ]
+          },
+          "ece": {
+            "candidate_minus_parent": -0.33733760277052044,
+            "ci95": [
+              -0.36700635899334366,
+              -0.30629448376287555
+            ],
+            "parent_ci95": [
+              0.3845718384896557,
+              0.4223828872836136
+            ],
+            "candidate_ci95": [
+              0.04670505012772756,
+              0.08779944049177658
+            ]
+          }
+        }
+      },
+      "calibrated": {
+        "parent": {
+          "acc": 0.3333333333333332,
+          "nll": 1.1395642135708883,
+          "brier": 0.6924498378688599,
+          "ece": 0.1225919918902803,
+          "nll_minus_uniform": 0.04095192490277855
+        },
+        "candidate": {
+          "acc": 0.3402777777777777,
+          "nll": 1.099795297211755,
+          "brier": 0.6673327111796757,
+          "ece": 0.029085900496782724,
+          "nll_minus_uniform": 0.0011830085436452809
+        },
+        "paired": {
+          "acc": {
+            "candidate_minus_parent": 0.006944444444444475,
+            "ci95": [
+              -5.551115123125783e-17,
+              0.01736111111111116
+            ],
+            "parent_ci95": [
+              0.3333333333333332,
+              0.3333333333333334
+            ],
+            "candidate_ci95": [
+              0.33333333333333326,
+              0.3506944444444444
+            ]
+          },
+          "nll": {
+            "candidate_minus_parent": -0.039768916359133266,
+            "ci95": [
+              -0.0541526606128827,
+              -0.02516884604006643
+            ],
+            "parent_ci95": [
+              1.1281309744714123,
+              1.150621803326349
+            ],
+            "candidate_ci95": [
+              1.0898406047820133,
+              1.1100987332218029
+            ]
+          },
+          "brier": {
+            "candidate_minus_parent": -0.0251171266891842,
+            "ci95": [
+              -0.03573663793465235,
+              -0.01491019414543692
+            ],
+            "parent_ci95": [
+              0.6844439570327296,
+              0.7007751716641649
+            ],
+            "candidate_ci95": [
+              0.6604923908009388,
+              0.6744589579107121
+            ]
+          },
+          "ece": {
+            "candidate_minus_parent": -0.09350609139349758,
+            "ci95": [
+              -0.11225927559402635,
+              -0.06097575023830562
+            ],
+            "parent_ci95": [
+              0.11518648560004421,
+              0.13576747842445488
+            ],
+            "candidate_ci95": [
+              0.016975309751749493,
+              0.060832712514700446
+            ]
+          }
+        }
+      }
+    },
+    "development/full/heldout_task/all": {
+      "windows": 279,
+      "episodes": 96,
+      "groups": 32,
+      "episode_weight_sum": 96.0,
+      "raw": {
+        "parent": {
+          "acc": 0.33593749999999994,
+          "nll": 1.7575686233451442,
+          "brier": 0.9328596715471842,
+          "ece": 0.38062690344193295,
+          "nll_minus_uniform": 0.6589563346770344
+        },
+        "candidate": {
+          "acc": 0.33854166666666646,
+          "nll": 1.1020826039546936,
+          "brier": 0.6685505178342491,
+          "ece": 0.06767651412584706,
+          "nll_minus_uniform": 0.003470315286583814
+        },
+        "paired": {
+          "acc": {
+            "candidate_minus_parent": 0.0026041666666665186,
+            "ci95": [
+              -0.012152777777777792,
+              0.01822916666666663
+            ],
+            "parent_ci95": [
+              0.3333333333333332,
+              0.3411458333333333
+            ],
+            "candidate_ci95": [
+              0.3246310763888887,
+              0.35329861111111116
+            ]
+          },
+          "nll": {
+            "candidate_minus_parent": -0.6554860193904506,
+            "ci95": [
+              -0.7191252619922539,
+              -0.5925014370566782
+            ],
+            "parent_ci95": [
+              1.6936048834769093,
+              1.8243095747652278
+            ],
+            "candidate_ci95": [
+              1.0909955635083946,
+              1.1148722338770993
+            ]
+          },
+          "brier": {
+            "candidate_minus_parent": -0.26430915371293506,
+            "ci95": [
+              -0.28718910807802966,
+              -0.23881191694116355
+            ],
+            "parent_ci95": [
+              0.908673057864882,
+              0.9557397760683716
+            ],
+            "candidate_ci95": [
+              0.6602464516032021,
+              0.6782263566624999
+            ]
+          },
+          "ece": {
+            "candidate_minus_parent": -0.3129503893160859,
+            "ci95": [
+              -0.34660047272419636,
+              -0.2808933130120531
+            ],
+            "parent_ci95": [
+              0.3655869447937234,
+              0.39906087104179055
+            ],
+            "candidate_ci95": [
+              0.04217660861029082,
+              0.09521924116463996
+            ]
+          }
+        }
+      },
+      "calibrated": {
+        "parent": {
+          "acc": 0.33593749999999994,
+          "nll": 1.1503900787443782,
+          "brier": 0.7000942462701811,
+          "ece": 0.11705101643165554,
+          "nll_minus_uniform": 0.05177779007626837
+        },
+        "candidate": {
+          "acc": 0.33854166666666646,
+          "nll": 1.0975078649634014,
+          "brier": 0.6657823404671227,
+          "ece": 0.03921704440404433,
+          "nll_minus_uniform": -0.0011044237047084238
+        },
+        "paired": {
+          "acc": {
+            "candidate_minus_parent": 0.0026041666666665186,
+            "ci95": [
+              -0.012152777777777792,
+              0.01822916666666663
+            ],
+            "parent_ci95": [
+              0.3333333333333332,
+              0.3411458333333333
+            ],
+            "candidate_ci95": [
+              0.3246310763888887,
+              0.35329861111111116
+            ]
+          },
+          "nll": {
+            "candidate_minus_parent": -0.052882213780976794,
+            "ci95": [
+              -0.062443593811576194,
+              -0.04190493793031237
+            ],
+            "parent_ci95": [
+              1.1410787694045739,
+              1.1593915727679056
+            ],
+            "candidate_ci95": [
+              1.091928362600967,
+              1.1035442157202628
+            ]
+          },
+          "brier": {
+            "candidate_minus_parent": -0.03431190580305843,
+            "ci95": [
+              -0.04143880164165239,
+              -0.026395950941262136
+            ],
+            "parent_ci95": [
+              0.6935373129262573,
+              0.706784911160115
+            ],
+            "candidate_ci95": [
+              0.6617785284376593,
+              0.6702643963140507
+            ]
+          },
+          "ece": {
+            "candidate_minus_parent": -0.0778339720276112,
+            "ci95": [
+              -0.11444951609054545,
+              -0.04209215226387989
+            ],
+            "parent_ci95": [
+              0.1088484189991902,
+              0.13090558733426141
+            ],
+            "candidate_ci95": [
+              0.010719860472098339,
+              0.07335949517961426
+            ]
+          }
+        }
+      }
+    },
+    "development/full/all/all": {
+      "windows": 475,
+      "episodes": 192,
+      "groups": 64,
+      "episode_weight_sum": 192.0,
+      "raw": {
+        "parent": {
+          "acc": 0.3346354166666669,
+          "nll": 1.73501049035917,
+          "brier": 0.9315912120154644,
+          "ece": 0.39189449934680637,
+          "nll_minus_uniform": 0.6363982016910603
+        },
+        "candidate": {
+          "acc": 0.3394097222222226,
+          "nll": 1.1081342789041249,
+          "brier": 0.6726546422375007,
+          "ece": 0.056655958235590886,
+          "nll_minus_uniform": 0.009521990236015077
+        },
+        "paired": {
+          "acc": {
+            "candidate_minus_parent": 0.004774305555555691,
+            "ci95": [
+              -0.003917100694444441,
+              0.013888888888888895
+            ],
+            "parent_ci95": [
+              0.3333333333333333,
+              0.3372395833333335
+            ],
+            "candidate_ci95": [
+              0.3311631944444446,
+              0.34810112847222235
+            ]
+          },
+          "nll": {
+            "candidate_minus_parent": -0.6268762114550452,
+            "ci95": [
+              -0.6790899859377325,
+              -0.574909379457072
+            ],
+            "parent_ci95": [
+              1.6811977782718917,
+              1.78661079285623
+            ],
+            "candidate_ci95": [
+              1.0961882249343542,
+              1.121428990046415
+            ]
+          },
+          "brier": {
+            "candidate_minus_parent": -0.25893656977796364,
+            "ci95": [
+              -0.28024348498046536,
+              -0.23624394979708538
+            ],
+            "parent_ci95": [
+              0.9092211056538773,
+              0.9509438619550089
+            ],
+            "candidate_ci95": [
+              0.664610827238441,
+              0.6815656878154811
+            ]
+          },
+          "ece": {
+            "candidate_minus_parent": -0.3352385411112155,
+            "ci95": [
+              -0.3512828651139513,
+              -0.31080435666201395
+            ],
+            "parent_ci95": [
+              0.37815344075238194,
+              0.40561665467498564
+            ],
+            "candidate_ci95": [
+              0.04569651446212631,
+              0.07531915688931974
+            ]
+          }
+        }
+      },
+      "calibrated": {
+        "parent": {
+          "acc": 0.3346354166666669,
+          "nll": 1.1449771461576332,
+          "brier": 0.6962720420695208,
+          "ece": 0.11982150416096789,
+          "nll_minus_uniform": 0.04636485748952346
+        },
+        "candidate": {
+          "acc": 0.3394097222222226,
+          "nll": 1.0986515810875772,
+          "brier": 0.6665575258233997,
+          "ece": 0.024607196074886876,
+          "nll_minus_uniform": 3.929241946742934e-05
+        },
+        "paired": {
+          "acc": {
+            "candidate_minus_parent": 0.004774305555555691,
+            "ci95": [
+              -0.003917100694444441,
+              0.013888888888888895
+            ],
+            "parent_ci95": [
+              0.3333333333333333,
+              0.3372395833333335
+            ],
+            "candidate_ci95": [
+              0.3311631944444446,
+              0.34810112847222235
+            ]
+          },
+          "nll": {
+            "candidate_minus_parent": -0.04632556507005603,
+            "ci95": [
+              -0.05491666451541059,
+              -0.037191163770480214
+            ],
+            "parent_ci95": [
+              1.1365041969928558,
+              1.1526221927426759
+            ],
+            "candidate_ci95": [
+              1.0931171370730461,
+              1.1043579084594946
+            ]
+          },
+          "brier": {
+            "candidate_minus_parent": -0.029714516246121092,
+            "ci95": [
+              -0.036132595842729695,
+              -0.02284046811142687
+            ],
+            "parent_ci95": [
+              0.6901428934681393,
+              0.701587223080451
+            ],
+            "candidate_ci95": [
+              0.6627210641166761,
+              0.6705910357128937
+            ]
+          },
+          "ece": {
+            "candidate_minus_parent": -0.09521430808608101,
+            "ci95": [
+              -0.10827761667473262,
+              -0.0701737586224902
+            ],
+            "parent_ci95": [
+              0.11338467129999455,
+              0.12711460228131327
+            ],
+            "candidate_ci95": [
+              0.015289219037466687,
+              0.04742637735158731
+            ]
+          }
+        }
+      }
+    }
+  },
+  "origin_confusion": {
+    "calibration/full/all/all": {
+      "parent": {
+        "labels": [
+          "human",
+          "script",
+          "agent"
+        ],
+        "rows": "true origin",
+        "columns": "predicted origin",
+        "confusion_episode_mass": [
+          [
+            0.0,
+            31.999999999999993,
+            0.0
+          ],
+          [
+            0.0,
+            31.999999999999996,
+            0.0
+          ],
+          [
+            0.0,
+            32.0,
+            0.0
+          ]
+        ],
+        "recall": {
+          "human": 0.0,
+          "script": 1.0,
+          "agent": 0.0
+        },
+        "prediction_share": {
+          "human": 0.0,
+          "script": 0.9999999999999999,
+          "agent": 0.0
+        },
+        "origin_episode_support": {
+          "human": 31.999999999999993,
+          "script": 31.999999999999996,
+          "agent": 32.0
+        },
+        "window_prediction_counts": {
+          "human": 0,
+          "script": 182,
+          "agent": 0
+        }
+      },
+      "candidate": {
+        "labels": [
+          "human",
+          "script",
+          "agent"
+        ],
+        "rows": "true origin",
+        "columns": "predicted origin",
+        "confusion_episode_mass": [
+          [
+            31.749999999999993,
+            0.25,
+            0.0
+          ],
+          [
+            31.66666666666666,
+            0.3333333333333333,
+            0.0
+          ],
+          [
+            31.75,
+            0.25,
+            0.0
+          ]
+        ],
+        "recall": {
+          "human": 0.9921875,
+          "script": 0.010416666666666668,
+          "agent": 0.0
+        },
+        "prediction_share": {
+          "human": 0.9913194444444443,
+          "script": 0.008680555555555554,
+          "agent": 0.0
+        },
+        "origin_episode_support": {
+          "human": 31.999999999999993,
+          "script": 31.999999999999993,
+          "agent": 32.0
+        },
+        "window_prediction_counts": {
+          "human": 179,
+          "script": 3,
+          "agent": 0
+        }
+      }
+    },
+    "development/full/iid/all": {
+      "parent": {
+        "labels": [
+          "human",
+          "script",
+          "agent"
+        ],
+        "rows": "true origin",
+        "columns": "predicted origin",
+        "confusion_episode_mass": [
+          [
+            0.0,
+            31.99999999999999,
+            0.0
+          ],
+          [
+            0.0,
+            31.99999999999999,
+            0.0
+          ],
+          [
+            0.0,
+            31.99999999999999,
+            0.0
+          ]
+        ],
+        "recall": {
+          "human": 0.0,
+          "script": 1.0,
+          "agent": 0.0
+        },
+        "prediction_share": {
+          "human": 0.0,
+          "script": 1.0,
+          "agent": 0.0
+        },
+        "origin_episode_support": {
+          "human": 31.99999999999999,
+          "script": 31.99999999999999,
+          "agent": 31.99999999999999
+        },
+        "window_prediction_counts": {
+          "human": 0,
+          "script": 196,
+          "agent": 0
+        }
+      },
+      "candidate": {
+        "labels": [
+          "human",
+          "script",
+          "agent"
+        ],
+        "rows": "true origin",
+        "columns": "predicted origin",
+        "confusion_episode_mass": [
+          [
+            31.666666666666657,
+            0.3333333333333333,
+            0.0
+          ],
+          [
+            31.333333333333325,
+            0.6666666666666666,
+            0.0
+          ],
+          [
+            30.166666666666657,
+            1.4999999999999998,
+            0.3333333333333333
+          ]
+        ],
+        "recall": {
+          "human": 0.9895833333333334,
+          "script": 0.020833333333333336,
+          "agent": 0.01041666666666667
+        },
+        "prediction_share": {
+          "human": 0.9704861111111113,
+          "script": 0.026041666666666678,
+          "agent": 0.0034722222222222238
+        },
+        "origin_episode_support": {
+          "human": 31.99999999999999,
+          "script": 31.999999999999993,
+          "agent": 31.99999999999999
+        },
+        "window_prediction_counts": {
+          "human": 188,
+          "script": 7,
+          "agent": 1
+        }
+      }
+    },
+    "development/full/heldout_task/all": {
+      "parent": {
+        "labels": [
+          "human",
+          "script",
+          "agent"
+        ],
+        "rows": "true origin",
+        "columns": "predicted origin",
+        "confusion_episode_mass": [
+          [
+            0.0,
+            31.99999999999998,
+            0.0
+          ],
+          [
+            0.0,
+            31.99999999999999,
+            0.0
+          ],
+          [
+            0.0,
+            31.74999999999998,
+            0.25
+          ]
+        ],
+        "recall": {
+          "human": 0.0,
+          "script": 1.0,
+          "agent": 0.007812500000000005
+        },
+        "prediction_share": {
+          "human": 0.0,
+          "script": 0.9973958333333334,
+          "agent": 0.0026041666666666683
+        },
+        "origin_episode_support": {
+          "human": 31.99999999999998,
+          "script": 31.99999999999999,
+          "agent": 31.99999999999998
+        },
+        "window_prediction_counts": {
+          "human": 0,
+          "script": 278,
+          "agent": 1
+        }
+      },
+      "candidate": {
+        "labels": [
+          "human",
+          "script",
+          "agent"
+        ],
+        "rows": "true origin",
+        "columns": "predicted origin",
+        "confusion_episode_mass": [
+          [
+            31.416666666666647,
+            0.5833333333333333,
+            0.0
+          ],
+          [
+            30.916666666666654,
+            1.0833333333333333,
+            0.0
+          ],
+          [
+            31.216666666666647,
+            0.7833333333333333,
+            0.0
+          ]
+        ],
+        "recall": {
+          "human": 0.9817708333333334,
+          "script": 0.03385416666666668,
+          "agent": 0.0
+        },
+        "prediction_share": {
+          "human": 0.9744791666666668,
+          "script": 0.025520833333333347,
+          "agent": 0.0
+        },
+        "origin_episode_support": {
+          "human": 31.99999999999998,
+          "script": 31.999999999999986,
+          "agent": 31.999999999999982
+        },
+        "window_prediction_counts": {
+          "human": 270,
+          "script": 9,
+          "agent": 0
+        }
+      }
+    },
+    "development/full/all/all": {
+      "parent": {
+        "labels": [
+          "human",
+          "script",
+          "agent"
+        ],
+        "rows": "true origin",
+        "columns": "predicted origin",
+        "confusion_episode_mass": [
+          [
+            0.0,
+            64.00000000000006,
+            0.0
+          ],
+          [
+            0.0,
+            64.00000000000004,
+            0.0
+          ],
+          [
+            0.0,
+            63.75000000000006,
+            0.25
+          ]
+        ],
+        "recall": {
+          "human": 0.0,
+          "script": 1.0,
+          "agent": 0.0039062499999999965
+        },
+        "prediction_share": {
+          "human": 0.0,
+          "script": 0.9986979166666666,
+          "agent": 0.0013020833333333322
+        },
+        "origin_episode_support": {
+          "human": 64.00000000000006,
+          "script": 64.00000000000004,
+          "agent": 64.00000000000006
+        },
+        "window_prediction_counts": {
+          "human": 0,
+          "script": 474,
+          "agent": 1
+        }
+      },
+      "candidate": {
+        "labels": [
+          "human",
+          "script",
+          "agent"
+        ],
+        "rows": "true origin",
+        "columns": "predicted origin",
+        "confusion_episode_mass": [
+          [
+            63.0833333333334,
+            0.9166666666666665,
+            0.0
+          ],
+          [
+            62.25000000000004,
+            1.7499999999999998,
+            0.0
+          ],
+          [
+            61.38333333333338,
+            2.283333333333333,
+            0.3333333333333333
+          ]
+        ],
+        "recall": {
+          "human": 0.9856770833333333,
+          "script": 0.02734374999999998,
+          "agent": 0.00520833333333333
+        },
+        "prediction_share": {
+          "human": 0.9724826388888888,
+          "script": 0.025781249999999974,
+          "agent": 0.0017361111111111095
+        },
+        "origin_episode_support": {
+          "human": 64.00000000000007,
+          "script": 64.00000000000004,
+          "agent": 64.00000000000004
+        },
+        "window_prediction_counts": {
+          "human": 458,
+          "script": 16,
+          "agent": 1
+        }
+      }
+    }
+  },
+  "training": {
+    "records": 2334,
+    "training_seconds": 371.20887875556946,
+    "trial_wall_seconds": 610.9060554900001,
+    "optimizer_steps": 292,
+    "transfer_evaluated": false,
+    "mechanism_and_coverage_gates_passed": true,
+    "promotable": false
+  },
+  "interpretation": [
+    "The candidate predicts human on about 97% of equal-episode-weighted full development windows. Per-class recall is a necessary release limitation.",
+    "IID candidate agent recall is 1.0417%; shifted agent recall is zero. Temperature does not alter these argmax decisions.",
+    "Uniform three-class NLL is ln(3)=1.0986122886681098. Raw candidate NLL is worse than uniform on IID and shifted development; calibrated NLL is very close to uniform. Low ECE does not establish useful discrimination.",
+    "Each development regime contains 32 latent groups with three matched origin episodes per group. Intervals describe this authored-policy population, not real human or LLM traffic. The shift changes tasks and policy priors within one controller implementation.",
+    "No fresh transfer evaluation was run. Older mixed-replay retention results cannot be assigned to this checkpoint."
+  ]
+}
