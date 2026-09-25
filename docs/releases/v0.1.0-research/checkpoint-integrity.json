@@ -1,0 +1,462 @@
+{
+  "schema": "sev-calibrated-checkpoint-integrity-v1",
+  "pass": true,
+  "verified_at": "2026-09-25T16:42:29.007740+00:00",
+  "source_checkpoint": "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/checkpoint",
+  "calibrated_checkpoint": "/Users/mac/Sev/runs/sev-research-release-20260925/calibrated-checkpoint",
+  "suite_sha256": "372d8709cce5fc50262afc5107cd4b3637614ff2b2a7e84a8ccfa4293a4b21c5",
+  "raw_head_sha256": "af6bfd215bf0b7eff92612a83b21cb56754ca87f0bf9f62fdfcfbef275d9eab6",
+  "calibrated_head_sha256": "dc1f550c7914388af77e607c70fe8801558a89a3847d37ea37d3923b28521c3e",
+  "adapter_sha256": "7fc73ad5a9e219731fba6bd926ba4a683b0c67dd676810d18e1a6018fa3b887c",
+  "raw_temperature": 1.0,
+  "released_temperature": 1.9999999999999998,
+  "training": {
+    "wall_seconds": 371.20887875556946,
+    "records_seen": 2334,
+    "requested_records": 2334,
+    "truncated_records": 0,
+    "rejected_records": 0,
+    "optimizer_steps": 292,
+    "forward_tokens": 738327,
+    "peak_device_bytes": 18913074688,
+    "device": "cuda",
+    "dtype": "bf16",
+    "batch": 4,
+    "peak_rss_bytes": 31561670656
+  },
+  "training_sources": {
+    "sev_behavioral_lookup_catalog": 391,
+    "sev_behavioral_update_export": 533,
+    "sev_behavioral_artifact_handoff": 739,
+    "sev_behavioral_authorized_export": 431,
+    "compositional": 160,
+    "legacy_policy": 80
+  },
+  "warm_start": {
+    "init_from": "jaredpalmer/kev-4b@485ace8703592fcf405488b262449990824cfed1",
+    "resolved": "/__modal/volumes/vo-RociVuGycNGtzvUcdOqecz/hub/models--jaredpalmer--kev-4b/snapshots/485ace8703592fcf405488b262449990824cfed1",
+    "adapter_sha256": "9797de69a42188e411b17b7b4fcb66a23374dcebc21d71a7a66f836b5d34df2b",
+    "head_sha256": "d8f796da36ff7bd7c0fb9496b452139bb7851af4fc82b07b500b682d3f721d6a",
+    "adapter_tensors": 496
+  },
+  "adapter_tensors": 496,
+  "head_tensors": {
+    "q.weight": {
+      "shape": [
+        256,
+        2560
+      ],
+      "dtype": "torch.float32",
+      "raw_bytes_sha256": "b32e0568a714d926fe5faef0cffc7f0215c61f0f4874e2138303a7641a4cbfca",
+      "byte_identical": true
+    },
+    "q.bias": {
+      "shape": [
+        256
+      ],
+      "dtype": "torch.float32",
+      "raw_bytes_sha256": "341acaf84e9296a1a6676e25789b2ce97c8632a408ea31c3a626f48e840496e4",
+      "byte_identical": true
+    },
+    "k.weight": {
+      "shape": [
+        256,
+        2560
+      ],
+      "dtype": "torch.float32",
+      "raw_bytes_sha256": "7caa9354998b823ae4ca2c87b849b240bf474cfb8479b43e8a34e012e1fb2d97",
+      "byte_identical": true
+    },
+    "k.bias": {
+      "shape": [
+        256
+      ],
+      "dtype": "torch.float32",
+      "raw_bytes_sha256": "b8d56826b48ca7768c910704d155b6f9368481658f4b7be5e6e87c9e3a77109a",
+      "byte_identical": true
+    }
+  },
+  "calibration": {
+    "windows": 182,
+    "episodes": 96,
+    "groups": 32,
+    "temperature": 1.9999999999999998,
+    "raw": {
+      "acc": 0.3342013888888889,
+      "nll": 1.0988623728398248,
+      "brier": 0.6670543370614523,
+      "ece": 0.06554797243603253
+    },
+    "calibrated": {
+      "acc": 0.3342013888888889,
+      "nll": 1.094225810223573,
+      "brier": 0.6635708549658472,
+      "ece": 0.04216089485176933
+    },
+    "cross_validation": {
+      "raw": {
+        "n": 182,
+        "ece": 0.030378155838447805,
+        "brier": 0.6564945291407126,
+        "nll": 1.0838391530675782,
+        "confident_error_rate": 0.0,
+        "coverage_at_5pct_error": 0.01098901098901099
+      },
+      "out_of_fold": {
+        "n": 182,
+        "ece": 0.02879543978652912,
+        "brier": 0.6607993702192454,
+        "nll": 1.0900062934624115,
+        "confident_error_rate": 0.0,
+        "coverage_at_5pct_error": 0.0
+      },
+      "ece_ci95": {
+        "raw": [
+          0.013784180181410588,
+          0.07820699846672471
+        ],
+        "out_of_fold": [
+          0.015176680491519571,
+          0.06251847627618651
+        ],
+        "delta": [
+          -0.045586065150116414,
+          0.03442859983142514
+        ]
+      },
+      "separated": false,
+      "temperatures": [
+        1.5511447618337346,
+        2.578740616879158,
+        1.6624757922855755,
+        2.3510958125672174,
+        2.70069989233638
+      ],
+      "folds": 5,
+      "seed": 0,
+      "samples": 1000,
+      "groups": 32,
+      "unit": "latent scenario group_id, across all original sources",
+      "fit_weighting": "equal episodes, then equal windows within each episode",
+      "canonical_metric_weighting": "windows; canonical raw/out_of_fold metrics and ECE intervals",
+      "episode_weighted": {
+        "raw": {
+          "acc": 0.3342013888888889,
+          "nll": 1.0988623728398248,
+          "brier": 0.6670543370614523,
+          "ece": 0.06554797243603253
+        },
+        "out_of_fold": {
+          "acc": 0.3342013888888889,
+          "nll": 1.0963892736496,
+          "brier": 0.6651579277109647,
+          "ece": 0.061642028028613405
+        }
+      },
+      "fold_by_group": {
+        "0a96bbbde731f77629d6": 0,
+        "0fd4a07c8a94efc8213a": 4,
+        "127dba0a0b6d112fdd60": 0,
+        "1a7d4eff40c538e9531b": 2,
+        "25f1f108010761f574ec": 0,
+        "42172cc6c0db60ca5758": 1,
+        "459d3a949d71768ba55d": 4,
+        "4c3fe25e9bd641be2ddb": 0,
+        "4c6ad83158be617c1548": 4,
+        "53c1f89988e203c21d7f": 1,
+        "635e51a0d3a3a3da2ba7": 4,
+        "7a15bda3e41ccfee7241": 1,
+        "7f573f974db9fa0d872d": 2,
+        "86f21fea379a7a9fe79e": 4,
+        "896e70c3467400fe789c": 3,
+        "89a112d154659e4b8585": 0,
+        "8de646371957ac833b8f": 2,
+        "9267379e905f6045e976": 2,
+        "9343076eec6e0c57c601": 0,
+        "95cf7a4cbfcb6a117bfc": 1,
+        "96651d23eb4107dd8e5a": 3,
+        "99fba8dee219cdf16eef": 3,
+        "9f8e8516bf49e0ec08d5": 0,
+        "a10ba4c34ba318f3829a": 3,
+        "ac1f21ab8ebefecfe315": 3,
+        "ace673b4d894d1f1740e": 2,
+        "ae5e6811a635cc23dfbd": 1,
+        "b786a1db55e5f652c1cf": 4,
+        "b8d7d7b733ad6a06fade": 2,
+        "d983184d237cd08a0327": 1,
+        "e90cd441191e7f18968b": 3,
+        "ed1a95e2dd7115022ea3": 1
+      }
+    },
+    "per_source": {
+      "sev_behavioral_artifact_handoff": {
+        "windows": 63,
+        "episodes": 24,
+        "groups": 8,
+        "record_ids_sha256": "ec2841fda8a390bd2d73d828e1d3efac393d6cc583f94188ef25588a85945877",
+        "raw": {
+          "acc": 0.34722222222222215,
+          "nll": 1.0806702183699979,
+          "brier": 0.6537004910585257,
+          "ece": 0.09166280712269316
+        },
+        "calibrated": {
+          "acc": 0.34722222222222215,
+          "nll": 1.0876702845061252,
+          "brier": 0.6589248476452055,
+          "ece": 0.04426971102023442
+        }
+      },
+      "sev_behavioral_authorized_export": {
+        "windows": 40,
+        "episodes": 24,
+        "groups": 8,
+        "record_ids_sha256": "255e72d055b44aa16ec7f11fe905f4c251fe28ced7f801120abef039c930115f",
+        "raw": {
+          "acc": 0.3333333333333333,
+          "nll": 1.104011417056653,
+          "brier": 0.6698152020985213,
+          "ece": 0.04556619047184074
+        },
+        "calibrated": {
+          "acc": 0.3333333333333333,
+          "nll": 1.0996799880244128,
+          "brier": 0.6672264414223563,
+          "ece": 0.04735674179920909
+        }
+      },
+      "sev_behavioral_lookup_catalog": {
+        "windows": 25,
+        "episodes": 24,
+        "groups": 8,
+        "record_ids_sha256": "8cd835d6e3fefa25803ffbc579240aa9c4ae264163027eaa186db00580e4b2e1",
+        "raw": {
+          "acc": 0.3333333333333333,
+          "nll": 1.0929036665832168,
+          "brier": 0.6633979694737079,
+          "ece": 0.10676289475303495
+        },
+        "calibrated": {
+          "acc": 0.3333333333333333,
+          "nll": 1.087115774278896,
+          "brier": 0.6586049595361453,
+          "ece": 0.052123650581165686
+        }
+      },
+      "sev_behavioral_update_export": {
+        "windows": 54,
+        "episodes": 24,
+        "groups": 8,
+        "record_ids_sha256": "f83b45d350186cfa47db970f9311408fbde0fb68bb884adc1a3644a36b18f52c",
+        "raw": {
+          "acc": 0.3229166666666667,
+          "nll": 1.11786418934943,
+          "brier": 0.6813036856150539,
+          "ece": 0.09059596392971296
+        },
+        "calibrated": {
+          "acc": 0.3229166666666667,
+          "nll": 1.1024371940848587,
+          "brier": 0.6695271712596828,
+          "ece": 0.060665733732341603
+        }
+      }
+    }
+  },
+  "recorded_runtime_source_hashes": {
+    "kev/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "kev/anchors.py": "6963eafdb276db5a6c94d939eae675c761555553b8d0f963ffd803448beaabbb",
+    "kev/api.py": "7bffacfb762c626b8bc2f670f350295af5ccb0883dbe90239c7d2f8e5ef56582",
+    "kev/autoresearch.py": "f7d7fabb9c0df7065bee3fec4aa4bee7028c5d1565847aefe2d74e3d7d40ed8a",
+    "kev/benchmark.py": "8d486659a9036102386b077fcbd197fc0d85ae7752a4711666d6b3a95622b26f",
+    "kev/calibrate.py": "c1eff4744fabd349e8abca86777a7aa0cbea44904c8223d3b61fca3d43741519",
+    "kev/checkpoint.py": "9f1dbc5d3d7d3050aca4ee34e0578c9ad76b7a2a7467dfc7a4ad65e3c471db59",
+    "kev/compare.py": "3606dbf98bb305d66420158498cb837304d2edb8dab01cdaf2ec42964bef3435",
+    "kev/composition.py": "f335ed17e18e0a544893db5e22b9a059e6ce1b2e14dbb863ac7d7bbf8f3e0536",
+    "kev/contrastive.py": "cbb979aa5d40265ad0e64695f94b281d91751fa405811ddfa8212fede111edcf",
+    "kev/data.py": "a5a5e200f56b60e4bf30a195a4cc87a74afddae15999ec48c7543a4f9b59f71c",
+    "kev/device.py": "d1677fd98ec0979c7284546306e34e0d09298ca4042fc39eb2b32a74f4e975c4",
+    "kev/evaluate.py": "999264f2837dcfbf2ec93601aa4745e701698ab850a43ad89324672a6604965c",
+    "kev/experiment.py": "1a5ca47d2b3d236e53c87e8c4197704f162c6692aa008521d31ea491945693f0",
+    "kev/jev.py": "acd4cc3f1844e438cc83a8d409c15ef78a5ef64d39ea10f583d75a6c7646b243",
+    "kev/metrics.py": "db0930d470c0ce16f16dcaf726d49a7a103973a5296cefc5259d1e68707d882b",
+    "kev/mlx_model.py": "f582428796faf6bf962b772a69a6227ac3259ccbd3215c0c8b55ce28dbbd0909",
+    "kev/model.py": "eac0f56c807b85b5c4077483d922e6bb03f07890de2835efd9372cf20cd01b8e",
+    "kev/plot.py": "0874bcff2885d8155a1cceade0de8a275a7163d3c3fd6aa0c294e8ccf5ff7e02",
+    "kev/predictors.py": "b2a66dd9f0f0a8026bc94603383bacfdd622e75d1c935173997175606626a9b3",
+    "kev/publish.py": "8abc9bcf4a01365697b05cf3c5ad0013462bd92d005f5616954e40ab1100c7aa",
+    "kev/serve.py": "c210b1f4598e64b49c399f73603ed372f4314c165ceda50e1340c0466ec1c735",
+    "kev/study_v3.py": "7891150aa623e4479c7c789d4dc4662f186132b37b7bac1e1f072b9e08ee13e3",
+    "kev/suite.py": "c5e5e27f2fed871b547a021d180b0a7f4a0542a488cce4ee02ad936f433441db",
+    "kev/train.py": "a2d85632d73760fb3efe51627ff4fde6af3100ed1c34e75d290c1b00c9899aa9",
+    "kev/transfer_v9.py": "0902409742151250a28af1fd8f42258b70fcc161f3deed3ee35fe3f473f3c763",
+    "modal_app.py": "5d55aa2a454aba2ba6e4a392ed77ab2bc849e9823b8298a41ce1b8fe4217344b",
+    "pyproject.toml": "7c17fbe9efcadda3eb488b59adf1b6db5938cd33af4d3bd389ce4359b73fcc7d",
+    "uv.lock": "a9922dbb89acdef78299fd2b4a8c3f7f0fa1b2bc08b55595b6926fa785a9c466"
+  },
+  "current_release_source_hashes": {
+    "kev/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "kev/anchors.py": "6963eafdb276db5a6c94d939eae675c761555553b8d0f963ffd803448beaabbb",
+    "kev/api.py": "7bffacfb762c626b8bc2f670f350295af5ccb0883dbe90239c7d2f8e5ef56582",
+    "kev/autoresearch.py": "f7d7fabb9c0df7065bee3fec4aa4bee7028c5d1565847aefe2d74e3d7d40ed8a",
+    "kev/benchmark.py": "8d486659a9036102386b077fcbd197fc0d85ae7752a4711666d6b3a95622b26f",
+    "kev/calibrate.py": "c1eff4744fabd349e8abca86777a7aa0cbea44904c8223d3b61fca3d43741519",
+    "kev/checkpoint.py": "9f1dbc5d3d7d3050aca4ee34e0578c9ad76b7a2a7467dfc7a4ad65e3c471db59",
+    "kev/compare.py": "3606dbf98bb305d66420158498cb837304d2edb8dab01cdaf2ec42964bef3435",
+    "kev/composition.py": "f335ed17e18e0a544893db5e22b9a059e6ce1b2e14dbb863ac7d7bbf8f3e0536",
+    "kev/contrastive.py": "cbb979aa5d40265ad0e64695f94b281d91751fa405811ddfa8212fede111edcf",
+    "kev/data.py": "a5a5e200f56b60e4bf30a195a4cc87a74afddae15999ec48c7543a4f9b59f71c",
+    "kev/device.py": "d1677fd98ec0979c7284546306e34e0d09298ca4042fc39eb2b32a74f4e975c4",
+    "kev/evaluate.py": "999264f2837dcfbf2ec93601aa4745e701698ab850a43ad89324672a6604965c",
+    "kev/experiment.py": "1a5ca47d2b3d236e53c87e8c4197704f162c6692aa008521d31ea491945693f0",
+    "kev/jev.py": "acd4cc3f1844e438cc83a8d409c15ef78a5ef64d39ea10f583d75a6c7646b243",
+    "kev/metrics.py": "db0930d470c0ce16f16dcaf726d49a7a103973a5296cefc5259d1e68707d882b",
+    "kev/mlx_model.py": "f582428796faf6bf962b772a69a6227ac3259ccbd3215c0c8b55ce28dbbd0909",
+    "kev/model.py": "eac0f56c807b85b5c4077483d922e6bb03f07890de2835efd9372cf20cd01b8e",
+    "kev/plot.py": "0874bcff2885d8155a1cceade0de8a275a7163d3c3fd6aa0c294e8ccf5ff7e02",
+    "kev/predictors.py": "b2a66dd9f0f0a8026bc94603383bacfdd622e75d1c935173997175606626a9b3",
+    "kev/publish.py": "8abc9bcf4a01365697b05cf3c5ad0013462bd92d005f5616954e40ab1100c7aa",
+    "kev/serve.py": "c210b1f4598e64b49c399f73603ed372f4314c165ceda50e1340c0466ec1c735",
+    "kev/study_v3.py": "7891150aa623e4479c7c789d4dc4662f186132b37b7bac1e1f072b9e08ee13e3",
+    "kev/suite.py": "c5e5e27f2fed871b547a021d180b0a7f4a0542a488cce4ee02ad936f433441db",
+    "kev/train.py": "a2d85632d73760fb3efe51627ff4fde6af3100ed1c34e75d290c1b00c9899aa9",
+    "kev/transfer_v9.py": "0902409742151250a28af1fd8f42258b70fcc161f3deed3ee35fe3f473f3c763",
+    "modal_app.py": "5d55aa2a454aba2ba6e4a392ed77ab2bc849e9823b8298a41ce1b8fe4217344b",
+    "pyproject.toml": "39ec40f14c88598dee7ac98fb859a5a44e22337235a3064ebd5e89036ce81e30",
+    "uv.lock": "a9922dbb89acdef78299fd2b4a8c3f7f0fa1b2bc08b55595b6926fa785a9c466"
+  },
+  "release_metadata_drift": {
+    "pyproject.toml": {
+      "trained_sha256": "7c17fbe9efcadda3eb488b59adf1b6db5938cd33af4d3bd389ce4359b73fcc7d",
+      "release_sha256": "39ec40f14c88598dee7ac98fb859a5a44e22337235a3064ebd5e89036ce81e30",
+      "changed_fields": [
+        "project.description",
+        "project.urls"
+      ],
+      "all_other_toml_equal": true
+    }
+  },
+  "recorded_git_commit": "d8b1413f428a9a8f4e3d6091acf3d9ed8445c864",
+  "recorded_commit_source_mismatches": [],
+  "checks": {
+    "suite_and_plan_match_registered_hashes": true,
+    "registration_names_fresh_study": true,
+    "configuration_matches_registered_recipe": true,
+    "result_binds_execution_provenance": true,
+    "raw_checkpoint_hashes_match_scored_artifact": true,
+    "raw_temperature_verified": true,
+    "trained_and_evaluated_suite_match": true,
+    "actual_trainer_arguments_match_plan": true,
+    "head_metadata_matches_training_arguments": true,
+    "base_and_architecture_match_plan": true,
+    "warm_start_matches_pinned_clean_parent": true,
+    "training_membership_is_registered_authored_subset": true,
+    "complete_training_without_rejection": true,
+    "no_locked_test_evaluation": true,
+    "recorded_mechanism_checks_pass": true,
+    "calibration_complete_evaluation": true,
+    "development_complete_evaluation": true,
+    "only_pyproject_differs_from_recorded_runtime_sources": true,
+    "original_project_file_matches_training": true,
+    "project_drift_is_description_and_urls_only": true,
+    "learned_head_tensor_names_match": true,
+    "head_tensor:q.weight": true,
+    "head_tensor:q.bias": true,
+    "head_tensor:k.weight": true,
+    "head_tensor:k.bias": true,
+    "adapter_has_expected_finite_tensors": true,
+    "adapter_is_byte_identical": true,
+    "copied_file:adapter_model.safetensors": true,
+    "copied_file:tokenizer_config.json": true,
+    "copied_file:tokenizer.json": true,
+    "copied_file:README.md": true,
+    "copied_file:training_metrics.json": true,
+    "copied_file:adapter_config.json": true,
+    "copied_file:chat_template.jinja": true,
+    "copied_file:training_config.json": true,
+    "calibration_receipt_matches_saved_metadata": true,
+    "all_calibration_input_hashes_still_match": true,
+    "per_source_receipt_matches_fit": true,
+    "temperature_independently_recomputed": true,
+    "calibration_population_exact": true,
+    "cv_is_latent_group_disjoint": true,
+    "calibration_excludes_development_and_test": true,
+    "all_inputs_stable_through_verification": true
+  },
+  "artifact_sha256": {
+    "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/checkpoint/README.md": "e0e50894b914f1765ef42c1eade74b42c613fb0330b06339f9502cc6f2e25e79",
+    "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/checkpoint/adapter_config.json": "8a05dfd6c5e7f61a62e6db5d8de8093a8dbbd105aa7ee7b5e7b73f6249f45617",
+    "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/checkpoint/adapter_model.safetensors": "7fc73ad5a9e219731fba6bd926ba4a683b0c67dd676810d18e1a6018fa3b887c",
+    "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/checkpoint/chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+    "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/checkpoint/head.pt": "af6bfd215bf0b7eff92612a83b21cb56754ca87f0bf9f62fdfcfbef275d9eab6",
+    "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/checkpoint/tokenizer.json": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523",
+    "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/checkpoint/tokenizer_config.json": "8671bed7c852ce9e661be94f179a7b4ffd091c2a65aea0363e5501c20318ee45",
+    "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/checkpoint/training_config.json": "f1936818cecded5fe659330a6e0a1ad631d9b5b1eb2014982634a58f7d6f7d68",
+    "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/checkpoint/training_metrics.json": "20b9314de861f32641b4f6a16ae8b06ba273426333da40c2820e5f591936d7a7",
+    "/Users/mac/Sev/runs/sev-research-release-20260925/calibrated-checkpoint/README.md": "e0e50894b914f1765ef42c1eade74b42c613fb0330b06339f9502cc6f2e25e79",
+    "/Users/mac/Sev/runs/sev-research-release-20260925/calibrated-checkpoint/adapter_config.json": "8a05dfd6c5e7f61a62e6db5d8de8093a8dbbd105aa7ee7b5e7b73f6249f45617",
+    "/Users/mac/Sev/runs/sev-research-release-20260925/calibrated-checkpoint/adapter_model.safetensors": "7fc73ad5a9e219731fba6bd926ba4a683b0c67dd676810d18e1a6018fa3b887c",
+    "/Users/mac/Sev/runs/sev-research-release-20260925/calibrated-checkpoint/calibration-sources.json": "be16ec2fdfb3b28b63888ede85cce428a8106785a2a64b37215550833176d875",
+    "/Users/mac/Sev/runs/sev-research-release-20260925/calibrated-checkpoint/calibration.json": "ca2b2eacb602dd61b87139cd5eafe2daf4d3fdd659c8cb8924538567259808bc",
+    "/Users/mac/Sev/runs/sev-research-release-20260925/calibrated-checkpoint/chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+    "/Users/mac/Sev/runs/sev-research-release-20260925/calibrated-checkpoint/head.pt": "dc1f550c7914388af77e607c70fe8801558a89a3847d37ea37d3923b28521c3e",
+    "/Users/mac/Sev/runs/sev-research-release-20260925/calibrated-checkpoint/tokenizer.json": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523",
+    "/Users/mac/Sev/runs/sev-research-release-20260925/calibrated-checkpoint/tokenizer_config.json": "8671bed7c852ce9e661be94f179a7b4ffd091c2a65aea0363e5501c20318ee45",
+    "/Users/mac/Sev/runs/sev-research-release-20260925/calibrated-checkpoint/training_config.json": "f1936818cecded5fe659330a6e0a1ad631d9b5b1eb2014982634a58f7d6f7d68",
+    "/Users/mac/Sev/runs/sev-research-release-20260925/calibrated-checkpoint/training_metrics.json": "20b9314de861f32641b4f6a16ae8b06ba273426333da40c2820e5f591936d7a7",
+    "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/provenance.json": "f540a4587f44f4a3bdda19f68a42377a56c56d464443beaaf8fe57b593beb85f",
+    "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/result.json": "ec4bfe6436093b6ba096921bb95b2643e8418c84d1e5cbbc596d78f2c744338c",
+    "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/train.log": "e5b54da6b803d7e6d5c0fdfc902b8095a123243a652ec996ab411da0c818ce09",
+    "/Users/mac/Sev/runs/sev-research-release-20260925/training-registration.json": "d46082575bf06ecbba776df6476be2cef694ba4f1e1c7ecb8f1b4048c33cb160",
+    "/Users/mac/Sev-release-20260925/experiments/sev-research-4b-v1.json": "af05762d5194a556cc6a518b0fc0860e6942157f0790b48ae80fe85098c5d94f",
+    "/Users/mac/Sev-release-20260925/evals/sev/behavioral-research-v1/manifest.json": "372d8709cce5fc50262afc5107cd4b3637614ff2b2a7e84a8ccfa4293a4b21c5",
+    "/Users/mac/Sev-release-20260925/evals/sev/behavioral-research-v1/train.jsonl": "0aa668b5cc927db65e6b7a0890bc47ff7061d0ec271ff239d7d120f362964a6e",
+    "/Users/mac/Sev-release-20260925/evals/sev/behavioral-research-v1/calibration.jsonl": "eebb5ddeb322b16bbb312ddb6927b1d71226b72e4b01d323c698d1e2a3c4f38d",
+    "/Users/mac/Sev-release-20260925/evals/sev/behavioral-research-v1/development.jsonl": "bd76cba90825cfb2699ff8a4419c99f7b395541ed1cfe51c4a69305451f659e5",
+    "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/calibration/rows.json": "00909b4d6b838c534d8d403d84a578fea1ddaac5e30a2b488c2d1c138c0d05ab",
+    "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/calibration/report.json": "6bee81d641d7003c7715c0b26bcec77fe244e59e847e52e7f14f7336d88f59f9",
+    "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/calibration/temperature.json": "497cbf805d98eeaa745023e5242e0a0dfb62ed8e588a6dbec1e46fe0ac08a3cc",
+    "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/development/report.json": "3c3966f1f1ffbc4e55a634c359d02590f2cd1f5e2ff071b98d4dca610ab8a2d6",
+    "/Users/mac/Sev/runs/sev-r2-behavioral-4b-parents-v1/00-kev-4b@485ace8703592fcf405488b262449990824cfed1/provenance.json": "38b41be0ab1c27020c14da51c62cb13a76a8b140d5d89dbfc48078abe18fe277",
+    "/Users/mac/Sev/pyproject.toml": "7c17fbe9efcadda3eb488b59adf1b6db5938cd33af4d3bd389ce4359b73fcc7d",
+    "/Users/mac/Sev-release-20260925/kev/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/Users/mac/Sev-release-20260925/kev/anchors.py": "6963eafdb276db5a6c94d939eae675c761555553b8d0f963ffd803448beaabbb",
+    "/Users/mac/Sev-release-20260925/kev/api.py": "7bffacfb762c626b8bc2f670f350295af5ccb0883dbe90239c7d2f8e5ef56582",
+    "/Users/mac/Sev-release-20260925/kev/autoresearch.py": "f7d7fabb9c0df7065bee3fec4aa4bee7028c5d1565847aefe2d74e3d7d40ed8a",
+    "/Users/mac/Sev-release-20260925/kev/benchmark.py": "8d486659a9036102386b077fcbd197fc0d85ae7752a4711666d6b3a95622b26f",
+    "/Users/mac/Sev-release-20260925/kev/calibrate.py": "c1eff4744fabd349e8abca86777a7aa0cbea44904c8223d3b61fca3d43741519",
+    "/Users/mac/Sev-release-20260925/kev/checkpoint.py": "9f1dbc5d3d7d3050aca4ee34e0578c9ad76b7a2a7467dfc7a4ad65e3c471db59",
+    "/Users/mac/Sev-release-20260925/kev/compare.py": "3606dbf98bb305d66420158498cb837304d2edb8dab01cdaf2ec42964bef3435",
+    "/Users/mac/Sev-release-20260925/kev/composition.py": "f335ed17e18e0a544893db5e22b9a059e6ce1b2e14dbb863ac7d7bbf8f3e0536",
+    "/Users/mac/Sev-release-20260925/kev/contrastive.py": "cbb979aa5d40265ad0e64695f94b281d91751fa405811ddfa8212fede111edcf",
+    "/Users/mac/Sev-release-20260925/kev/data.py": "a5a5e200f56b60e4bf30a195a4cc87a74afddae15999ec48c7543a4f9b59f71c",
+    "/Users/mac/Sev-release-20260925/kev/device.py": "d1677fd98ec0979c7284546306e34e0d09298ca4042fc39eb2b32a74f4e975c4",
+    "/Users/mac/Sev-release-20260925/kev/evaluate.py": "999264f2837dcfbf2ec93601aa4745e701698ab850a43ad89324672a6604965c",
+    "/Users/mac/Sev-release-20260925/kev/experiment.py": "1a5ca47d2b3d236e53c87e8c4197704f162c6692aa008521d31ea491945693f0",
+    "/Users/mac/Sev-release-20260925/kev/jev.py": "acd4cc3f1844e438cc83a8d409c15ef78a5ef64d39ea10f583d75a6c7646b243",
+    "/Users/mac/Sev-release-20260925/kev/metrics.py": "db0930d470c0ce16f16dcaf726d49a7a103973a5296cefc5259d1e68707d882b",
+    "/Users/mac/Sev-release-20260925/kev/mlx_model.py": "f582428796faf6bf962b772a69a6227ac3259ccbd3215c0c8b55ce28dbbd0909",
+    "/Users/mac/Sev-release-20260925/kev/model.py": "eac0f56c807b85b5c4077483d922e6bb03f07890de2835efd9372cf20cd01b8e",
+    "/Users/mac/Sev-release-20260925/kev/plot.py": "0874bcff2885d8155a1cceade0de8a275a7163d3c3fd6aa0c294e8ccf5ff7e02",
+    "/Users/mac/Sev-release-20260925/kev/predictors.py": "b2a66dd9f0f0a8026bc94603383bacfdd622e75d1c935173997175606626a9b3",
+    "/Users/mac/Sev-release-20260925/kev/publish.py": "8abc9bcf4a01365697b05cf3c5ad0013462bd92d005f5616954e40ab1100c7aa",
+    "/Users/mac/Sev-release-20260925/kev/serve.py": "c210b1f4598e64b49c399f73603ed372f4314c165ceda50e1340c0466ec1c735",
+    "/Users/mac/Sev-release-20260925/kev/study_v3.py": "7891150aa623e4479c7c789d4dc4662f186132b37b7bac1e1f072b9e08ee13e3",
+    "/Users/mac/Sev-release-20260925/kev/suite.py": "c5e5e27f2fed871b547a021d180b0a7f4a0542a488cce4ee02ad936f433441db",
+    "/Users/mac/Sev-release-20260925/kev/train.py": "a2d85632d73760fb3efe51627ff4fde6af3100ed1c34e75d290c1b00c9899aa9",
+    "/Users/mac/Sev-release-20260925/kev/transfer_v9.py": "0902409742151250a28af1fd8f42258b70fcc161f3deed3ee35fe3f473f3c763",
+    "/Users/mac/Sev-release-20260925/modal_app.py": "5d55aa2a454aba2ba6e4a392ed77ab2bc849e9823b8298a41ce1b8fe4217344b",
+    "/Users/mac/Sev-release-20260925/pyproject.toml": "39ec40f14c88598dee7ac98fb859a5a44e22337235a3064ebd5e89036ce81e30",
+    "/Users/mac/Sev-release-20260925/uv.lock": "a9922dbb89acdef78299fd2b4a8c3f7f0fa1b2bc08b55595b6926fa785a9c466",
+    "/Users/mac/Sev-release-20260925/scripts/report_sev_behavioral_round.py": "5beee8c302040233e2950ebe2d3f8944e84d6202f08b95943d679690bcdad8d8",
+    "/Users/mac/Sev-release-20260925/scripts/calibrate_sev_research.py": "f9fa4df59fda060e856f4e2a691e8fc0aeeeec836f1ddbaa43b3db5a39a874cf"
+  },
+  "locked_test_read": false,
+  "limits": [
+    "Artifact consistency and calibration verification only; no fresh inference or retraining.",
+    "Forward-token total is matched across trainer/result receipts, not independently reconstructed.",
+    "Warm-start adapter identity is compared with the prior pinned-parent evaluation receipt; parent adapter was not downloaded.",
+    "Calibration data were previously used in research. Calibration is not a field-accuracy or publication-quality guarantee.",
+    "Recorded runtime source hashes are authoritative because the recorded git base does not include uncommitted release changes."
+  ]
+}

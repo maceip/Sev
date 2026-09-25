@@ -634,6 +634,36 @@ def test_gate_rejects_confident_transfer_failure():
     assert not result["checks"]["heldout_pairs_at_least_70pct"]
     assert not result["checks"]["transfer_confident_errors_below_10pct"]
 
+def test_gate_comparison_skips_absent_variants_but_rejects_unmatched_coverage():
+    from kev.experiment import gate_report
+
+    coverage = {"requested_records": 1, "evaluated_records": 1, "requested_questions": 1,
+                "evaluated_questions": 1, "rejected_records": 0, "truncated_records": 0}
+    baseline = {"coverage": coverage, "tasks": {"operator_origin": {"acc": .5}},
+                "variants": {"clean": {"n": 1, "acc": .5}},
+                "permutation": {"n": 0, "flip_rate": None}}
+    candidate = copy.deepcopy(baseline)
+    candidate["tasks"]["operator_origin"]["acc"] = .6
+    checks = gate_report(candidate, {"passed": True}, baseline)
+    assert checks["passed"]
+    assert "none_present_not_worse" not in checks["checks"]
+    assert "permutation_not_worse" not in checks["checks"]
+    candidate["variants"]["none_present"] = {"n": 1, "acc": .6}
+    with pytest.raises(ValueError, match="none_present coverage"):
+        gate_report(candidate, {"passed": True}, baseline)
+    del candidate["variants"]["none_present"]
+    candidate["permutation"] = {"n": 1, "flip_rate": 0.0}
+    with pytest.raises(ValueError, match="permutation coverage"):
+        gate_report(candidate, {"passed": True}, baseline)
+    for report in (candidate, baseline):
+        report["variants"].update(none_present={"n": 1, "acc": .5}, none_absent={"n": 1, "acc": .5})
+        report["permutation"] = {"n": 1, "flip_rate": .1}
+    applicable = gate_report(candidate, {"passed": True}, baseline)
+    assert applicable["passed"]
+    assert all(applicable["checks"][name] for name in
+               ("none_present_not_worse", "none_absent_not_worse", "permutation_not_worse"))
+
+
 def test_uneven_microbatches_have_equal_record_weight():
     from kev.train import accumulation_records
     x = torch.arange(10, dtype=torch.float32)

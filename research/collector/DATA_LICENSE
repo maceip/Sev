@@ -1,0 +1,43 @@
+Sev behavioral data license
+
+Copyright 2026 Sev contributors.
+SPDX-License-Identifier: CC-BY-4.0
+
+The original generated behavioral data identified below is licensed under the
+Creative Commons Attribution 4.0 International Public License.
+
+License: https://creativecommons.org/licenses/by/4.0/
+Legal terms: https://creativecommons.org/licenses/by/4.0/legalcode.en
+
+Scope
+
+This grant covers the original generated records in behavioral_v1:
+  - episodes.jsonl
+  - observations.jsonl
+  - labels.jsonl
+and the derived behavioral model windows produced from those records.
+
+The corpus is identified by its manifest:
+https://jevalin-agent-datasets-095713295645.s3.eu-central-1.amazonaws.com/behavioral_v1/manifest.json
+Manifest SHA-256:
+83f311ca5d0feddedc16e06272d881542d48ec2b3b0cbc3e292572f391f2300d
+
+Suggested attribution
+
+Sev contributors, "Sev behavioral_v1," 2026.
+https://github.com/maceip/Sev
+Licensed under CC BY 4.0. Indicate any changes you make.
+
+The records describe authored simulated policies, not captured humans, live
+LLM executions, or measured network traffic. This license grants reuse rights;
+it does not certify the data's realism or a model's accuracy.
+
+Separate material
+
+The simulator source, source snapshots, and Kev runtime are governed by the
+repository's Apache-2.0 LICENSE, with existing attribution retained. This data
+notice does not relicense upstream Kev rule material, pretrained models,
+third-party datasets, or private captures. Their own notices and terms apply.
+
+The full CC BY 4.0 legal terms govern this grant. This notice does not add
+restrictions to those terms.

@@ -2,7 +2,7 @@
   {
     "printed": "0.845",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md",
       "docs/model-cards/kev-4b.md",
       "docs/model-cards/kev-0.8b.md"
@@ -16,7 +16,7 @@
   {
     "printed": "0.857",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md",
       "docs/model-cards/kev-4b.md",
       "docs/model-cards/kev-0.8b.md"
@@ -30,7 +30,7 @@
   {
     "printed": "0.211",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md",
       "docs/model-cards/kev-4b.md",
       "docs/model-cards/kev-0.8b.md"
@@ -44,7 +44,7 @@
   {
     "printed": "3.7%",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md",
       "docs/model-cards/kev-4b.md",
       "docs/model-cards/kev-0.8b.md"
@@ -71,7 +71,7 @@
   {
     "printed": "0.825",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-0.8b.md"
     ],
     "source": "runs/leaderboard.jsonl",
@@ -86,7 +86,7 @@
   {
     "printed": "0.652",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-0.8b.md"
     ],
     "source": "runs/leaderboard.jsonl",
@@ -101,7 +101,7 @@
   {
     "printed": "0.499",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-0.8b.md"
     ],
     "source": "runs/leaderboard.jsonl",
@@ -159,7 +159,7 @@
   {
     "printed": "0.872",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-4b.md",
       "docs/model-cards/kev-0.8b.md"
     ],
@@ -175,7 +175,7 @@
   {
     "printed": "0.797",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-4b.md"
     ],
     "source": "runs/leaderboard.jsonl",
@@ -190,7 +190,7 @@
   {
     "printed": "0.299",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-4b.md"
     ],
     "source": "runs/leaderboard.jsonl",
@@ -250,7 +250,7 @@
   {
     "printed": "0.872",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md",
       "docs/model-cards/kev-0.8b.md"
     ],
@@ -266,7 +266,7 @@
   {
     "printed": "0.822",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md",
       "docs/model-cards/kev-0.8b.md"
     ],
@@ -282,7 +282,7 @@
   {
     "printed": "0.286",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md",
       "docs/model-cards/kev-0.8b.md"
     ],
@@ -298,7 +298,7 @@
   {
     "printed": "8.7%",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md",
       "docs/model-cards/kev-0.8b.md"
     ],
@@ -534,7 +534,7 @@
   {
     "printed": "0.863",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md",
       "docs/model-cards/kev-8b-qwen3.md"
     ],
@@ -550,7 +550,7 @@
   {
     "printed": "0.796",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md",
       "docs/model-cards/kev-8b-qwen3.md"
     ],
@@ -890,7 +890,7 @@
   {
     "printed": "0.874",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md"
     ],
     "source": "runs/locked/kev-9b-night2-du-ungated/summary.json",
@@ -904,7 +904,7 @@
   {
     "printed": "0.852",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md"
     ],
     "source": "runs/locked/kev-9b-night2-du-ungated/summary.json",
@@ -918,7 +918,7 @@
   {
     "printed": "0.237",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md"
     ],
     "source": "runs/locked/kev-9b-night2-du-ungated/summary.json",
@@ -959,7 +959,7 @@
   {
     "printed": "0.871",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-4b.md"
     ],
     "source": "runs/locked/kev-4b-night2-du-ungated/summary.json",
@@ -973,7 +973,7 @@
   {
     "printed": "0.837",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-4b.md"
     ],
     "source": "runs/locked/kev-4b-night2-du-ungated/summary.json",
@@ -987,7 +987,7 @@
   {
     "printed": "0.255",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-4b.md"
     ],
     "source": "runs/locked/kev-4b-night2-du-ungated/summary.json",
@@ -1028,7 +1028,7 @@
   {
     "printed": "0.834",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-0.8b.md"
     ],
     "source": "runs/locked/kev-08b-night2-du-ungated/summary.json",
@@ -1042,7 +1042,7 @@
   {
     "printed": "0.684",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-0.8b.md"
     ],
     "source": "runs/locked/kev-08b-night2-du-ungated/summary.json",
@@ -1056,7 +1056,7 @@
   {
     "printed": "0.460",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-0.8b.md"
     ],
     "source": "runs/locked/kev-08b-night2-du-ungated/summary.json",
@@ -1110,7 +1110,7 @@
   {
     "printed": "0.837",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md"
     ],
     "source": "runs/locked/kev-9b-q35/summary.json",
@@ -1164,7 +1164,7 @@
   {
     "printed": "0.832",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-4b.md"
     ],
     "source": "runs/locked/kev-4b-q35/summary.json",
@@ -1244,7 +1244,7 @@
   {
     "printed": "0.668",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-0.8b.md"
     ],
     "source": "runs/locked/kev-08b-q35-ungated/summary.json",
@@ -1364,7 +1364,7 @@
   {
     "printed": "0.106",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md"
     ],
     "source": "runs/night2-9b-du/00-trial-0/result.json",
@@ -1377,7 +1377,7 @@
   {
     "printed": "0.042",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md"
     ],
     "source": "runs/night2-9b-du/00-trial-0/result.json",
@@ -1390,7 +1390,7 @@
   {
     "printed": "8.7%",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md"
     ],
     "source": "runs/night2-9b-du/00-trial-0/result.json",
@@ -1404,7 +1404,7 @@
   {
     "printed": "4.0%",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md"
     ],
     "source": "runs/night2-9b-du/00-trial-0/result.json",
@@ -1430,7 +1430,7 @@
   {
     "printed": "0.47",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md"
     ],
     "source": "runs/night2-9b-du/00-trial-0/result.json",
@@ -1443,7 +1443,7 @@
   {
     "printed": "0.45",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md"
     ],
     "source": "runs/night2-9b-du/00-trial-0/result.json",
@@ -1736,7 +1736,7 @@
   {
     "printed": "9%",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md",
       "docs/model-cards/kev-4b.md"
     ],
@@ -1915,7 +1915,7 @@
   {
     "printed": "0.90",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md"
     ],
     "source": "runs/n2-9b-du-v4df/report.json",
@@ -1928,7 +1928,7 @@
   {
     "printed": "0.80",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md"
     ],
     "source": "runs/n2-9b-du-v9/report.json",
@@ -1976,7 +1976,7 @@
   {
     "printed": "0.93",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md",
       "docs/model-cards/kev-4b.md"
     ],
@@ -1990,7 +1990,7 @@
   {
     "printed": "0.917",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md"
     ],
     "source": "runs/q35-9b-s1-semif-v1/report.json",
@@ -2003,7 +2003,7 @@
   {
     "printed": "0.965",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md",
       "docs/model-cards/kev-4b.md"
     ],
@@ -2028,7 +2028,7 @@
   {
     "printed": "144",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md",
       "docs/model-cards/kev-4b.md"
     ],
@@ -2041,7 +2041,7 @@
   {
     "printed": "0.952",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md"
     ],
     "source": "runs/q35-9b-s1-scienthoon-v1/report.json",
@@ -2054,7 +2054,7 @@
   {
     "printed": "0.911",
     "in": [
-      "README.md"
+      "KEV_README.md"
     ],
     "source": "runs/q35-9b-s1-scienthoon-v1/report.json",
     "path": [
@@ -2146,7 +2146,7 @@
   {
     "printed": "0.897",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md",
       "docs/model-cards/kev-4b.md"
     ],
@@ -2160,7 +2160,7 @@
   {
     "printed": "0.914",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md",
       "docs/model-cards/kev-4b.md"
     ],
@@ -2320,7 +2320,7 @@
   {
     "printed": "0.93",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md",
       "docs/model-cards/kev-4b.md"
     ],
@@ -2626,7 +2626,7 @@
   {
     "printed": "0%",
     "in": [
-      "README.md"
+      "KEV_README.md"
     ],
     "source": "runs/n2-9b-du-v9/report.json",
     "path": [
@@ -2651,7 +2651,7 @@
   {
     "printed": "0.758",
     "in": [
-      "README.md"
+      "KEV_README.md"
     ],
     "source": "runs/jev-wanli-v1/report.json",
     "path": [
@@ -2662,7 +2662,7 @@
   {
     "printed": "0.891",
     "in": [
-      "README.md"
+      "KEV_README.md"
     ],
     "source": "runs/jev-typesafe-v1/comparison.json",
     "path": [
@@ -2675,7 +2675,7 @@
   {
     "printed": "0.125",
     "in": [
-      "README.md"
+      "KEV_README.md"
     ],
     "source": "runs/jev-typesafe-v1/comparison.json",
     "path": [
@@ -2688,7 +2688,7 @@
   {
     "printed": "0.883",
     "in": [
-      "README.md"
+      "KEV_README.md"
     ],
     "source": "runs/jev-typesafe-v1/comparison.json",
     "path": [
@@ -2701,7 +2701,7 @@
   {
     "printed": "0.127",
     "in": [
-      "README.md"
+      "KEV_README.md"
     ],
     "source": "runs/jev-typesafe-v1/comparison.json",
     "path": [
@@ -2714,7 +2714,7 @@
   {
     "printed": "0.703",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md"
     ],
     "source": "runs/kev-9b-wanli-v1/report.json",
@@ -2726,7 +2726,7 @@
   {
     "printed": "0.695",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-4b.md"
     ],
     "source": "runs/kev-4b-wanli-v1/report.json",
@@ -2738,7 +2738,7 @@
   {
     "printed": "0.809",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md"
     ],
     "source": "runs/kev-typesafe-v1/comparison.json",
@@ -2752,7 +2752,7 @@
   {
     "printed": "0.226",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md"
     ],
     "source": "runs/kev-typesafe-v1/comparison.json",
@@ -2766,7 +2766,7 @@
   {
     "printed": "0.728",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md"
     ],
     "source": "runs/kev-typesafe-v1/comparison.json",
@@ -2780,7 +2780,7 @@
   {
     "printed": "0.304",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md"
     ],
     "source": "runs/kev-typesafe-v1/comparison.json",
@@ -2794,7 +2794,7 @@
   {
     "printed": "0.856",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-4b.md"
     ],
     "source": "runs/kev-typesafe-v1/comparison.json",
@@ -2808,7 +2808,7 @@
   {
     "printed": "0.231",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-4b.md"
     ],
     "source": "runs/kev-typesafe-v1/comparison.json",
@@ -2822,7 +2822,7 @@
   {
     "printed": "0.770",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-4b.md"
     ],
     "source": "runs/kev-typesafe-v1/comparison.json",
@@ -2836,7 +2836,7 @@
   {
     "printed": "0.308",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-4b.md"
     ],
     "source": "runs/kev-typesafe-v1/comparison.json",
@@ -2930,7 +2930,7 @@
   {
     "printed": "13",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md",
       "docs/model-cards/kev-4b.md"
     ],
@@ -2943,7 +2943,7 @@
   {
     "printed": "89",
     "in": [
-      "README.md",
+      "KEV_README.md",
       "docs/model-cards/kev-9b.md",
       "docs/model-cards/kev-4b.md"
     ],
@@ -2956,7 +2956,7 @@
   {
     "printed": "0.92",
     "in": [
-      "README.md"
+      "KEV_README.md"
     ],
     "source": "runs/kev-typesafe-v1/comparison.json",
     "path": [
@@ -2970,7 +2970,7 @@
   {
     "printed": "0.75",
     "in": [
-      "README.md"
+      "KEV_README.md"
     ],
     "source": "runs/kev-typesafe-v1/comparison.json",
     "path": [
@@ -2984,7 +2984,7 @@
   {
     "printed": "0.79",
     "in": [
-      "README.md"
+      "KEV_README.md"
     ],
     "source": "runs/kev-typesafe-v1/comparison.json",
     "path": [
@@ -2998,7 +2998,7 @@
   {
     "printed": "0.88",
     "in": [
-      "README.md"
+      "KEV_README.md"
     ],
     "source": "runs/kev-typesafe-v1/comparison.json",
     "path": [
@@ -3012,7 +3012,7 @@
   {
     "printed": "0.81",
     "in": [
-      "README.md"
+      "KEV_README.md"
     ],
     "source": "runs/kev-typesafe-v1/comparison.json",
     "path": [
@@ -3026,7 +3026,7 @@
   {
     "printed": "26",
     "in": [
-      "README.md"
+      "KEV_README.md"
     ],
     "source": "runs/kev-typesafe-v1/comparison.json",
     "path": [
@@ -3152,5 +3152,406 @@
       "workload_oof",
       "ece"
     ]
+  },
+  {
+    "printed": "34.03%",
+    "in": [
+      "README.md",
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/paired-report.json",
+    "path": [
+      "panels",
+      "development",
+      "full/iid/all",
+      "raw",
+      "candidate",
+      "acc"
+    ],
+    "scale": 100
+  },
+  {
+    "printed": "33.33%",
+    "in": [
+      "README.md",
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/paired-report.json",
+    "path": [
+      "panels",
+      "development",
+      "full/iid/all",
+      "raw",
+      "parent",
+      "acc"
+    ],
+    "scale": 100
+  },
+  {
+    "printed": "33.85%",
+    "in": [
+      "README.md",
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/paired-report.json",
+    "path": [
+      "panels",
+      "development",
+      "full/heldout_task/all",
+      "raw",
+      "candidate",
+      "acc"
+    ],
+    "scale": 100
+  },
+  {
+    "printed": "33.59%",
+    "in": [
+      "README.md",
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/paired-report.json",
+    "path": [
+      "panels",
+      "development",
+      "full/heldout_task/all",
+      "raw",
+      "parent",
+      "acc"
+    ],
+    "scale": 100
+  },
+  {
+    "printed": "1.1142",
+    "in": [
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/paired-report.json",
+    "path": [
+      "panels",
+      "development",
+      "full/iid/all",
+      "raw",
+      "candidate",
+      "nll"
+    ],
+    "scale": 1
+  },
+  {
+    "printed": "1.0998",
+    "in": [
+      "README.md",
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/paired-report.json",
+    "path": [
+      "panels",
+      "development",
+      "full/iid/all",
+      "calibrated",
+      "candidate",
+      "nll"
+    ],
+    "scale": 1
+  },
+  {
+    "printed": "0.0658",
+    "in": [
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/paired-report.json",
+    "path": [
+      "panels",
+      "development",
+      "full/iid/all",
+      "raw",
+      "candidate",
+      "ece"
+    ],
+    "scale": 1
+  },
+  {
+    "printed": "0.0291",
+    "in": [
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/paired-report.json",
+    "path": [
+      "panels",
+      "development",
+      "full/iid/all",
+      "calibrated",
+      "candidate",
+      "ece"
+    ],
+    "scale": 1
+  },
+  {
+    "printed": "1.1021",
+    "in": [
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/paired-report.json",
+    "path": [
+      "panels",
+      "development",
+      "full/heldout_task/all",
+      "raw",
+      "candidate",
+      "nll"
+    ],
+    "scale": 1
+  },
+  {
+    "printed": "1.0975",
+    "in": [
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/paired-report.json",
+    "path": [
+      "panels",
+      "development",
+      "full/heldout_task/all",
+      "calibrated",
+      "candidate",
+      "nll"
+    ],
+    "scale": 1
+  },
+  {
+    "printed": "0.0677",
+    "in": [
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/paired-report.json",
+    "path": [
+      "panels",
+      "development",
+      "full/heldout_task/all",
+      "raw",
+      "candidate",
+      "ece"
+    ],
+    "scale": 1
+  },
+  {
+    "printed": "0.0392",
+    "in": [
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/paired-report.json",
+    "path": [
+      "panels",
+      "development",
+      "full/heldout_task/all",
+      "calibrated",
+      "candidate",
+      "ece"
+    ],
+    "scale": 1
+  },
+  {
+    "printed": "2.0",
+    "in": [
+      "README.md",
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/calibration.json",
+    "path": [
+      "fit",
+      "temperature"
+    ]
+  },
+  {
+    "printed": "0.0655",
+    "in": [
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/calibration.json",
+    "path": [
+      "fit",
+      "cross_validation",
+      "episode_weighted",
+      "raw",
+      "ece"
+    ]
+  },
+  {
+    "printed": "0.0616",
+    "in": [
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/calibration.json",
+    "path": [
+      "fit",
+      "cross_validation",
+      "episode_weighted",
+      "out_of_fold",
+      "ece"
+    ]
+  },
+  {
+    "printed": "292",
+    "in": [
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/training-metrics.json",
+    "path": [
+      "optimizer_steps"
+    ]
+  },
+  {
+    "printed": "738,327",
+    "in": [
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/training-metrics.json",
+    "path": [
+      "forward_tokens"
+    ]
+  },
+  {
+    "printed": "2,334",
+    "in": [
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/training-metrics.json",
+    "path": [
+      "records_seen"
+    ]
+  },
+  {
+    "printed": "98.96%",
+    "in": [
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/class-metrics.json",
+    "path": [
+      "origin_confusion",
+      "development/full/iid/all",
+      "candidate",
+      "recall",
+      "human"
+    ],
+    "scale": 100
+  },
+  {
+    "printed": "2.08%",
+    "in": [
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/class-metrics.json",
+    "path": [
+      "origin_confusion",
+      "development/full/iid/all",
+      "candidate",
+      "recall",
+      "script"
+    ],
+    "scale": 100
+  },
+  {
+    "printed": "1.04%",
+    "in": [
+      "docs/model-cards/sev-4b.md",
+      "README.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/class-metrics.json",
+    "path": [
+      "origin_confusion",
+      "development/full/iid/all",
+      "candidate",
+      "recall",
+      "agent"
+    ],
+    "scale": 100
+  },
+  {
+    "printed": "98.18%",
+    "in": [
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/class-metrics.json",
+    "path": [
+      "origin_confusion",
+      "development/full/heldout_task/all",
+      "candidate",
+      "recall",
+      "human"
+    ],
+    "scale": 100
+  },
+  {
+    "printed": "3.39%",
+    "in": [
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/class-metrics.json",
+    "path": [
+      "origin_confusion",
+      "development/full/heldout_task/all",
+      "candidate",
+      "recall",
+      "script"
+    ],
+    "scale": 100
+  },
+  {
+    "printed": "0.00%",
+    "in": [
+      "docs/model-cards/sev-4b.md",
+      "README.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/class-metrics.json",
+    "path": [
+      "origin_confusion",
+      "development/full/heldout_task/all",
+      "candidate",
+      "recall",
+      "agent"
+    ],
+    "scale": 100
+  },
+  {
+    "printed": "0.69",
+    "in": [
+      "README.md",
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/paired-report.json",
+    "path": [
+      "panels",
+      "development",
+      "full/iid/all",
+      "raw",
+      "paired",
+      "acc",
+      "candidate_minus_parent"
+    ],
+    "scale": 100
+  },
+  {
+    "printed": "0.00",
+    "in": [
+      "README.md",
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/claim-values.json",
+    "path": [
+      "iid_gain_ci95_low"
+    ],
+    "scale": 100
+  },
+  {
+    "printed": "1.74",
+    "in": [
+      "README.md",
+      "docs/model-cards/sev-4b.md"
+    ],
+    "source": "docs/releases/v0.1.0-research/claim-values.json",
+    "path": [
+      "iid_gain_ci95_high"
+    ],
+    "scale": 100
   }
 ]

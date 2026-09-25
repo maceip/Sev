@@ -1,0 +1,35 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+delta: warm start from /__modal/volumes/vo-RociVuGycNGtzvUcdOqecz/hub/models--jaredpalmer--kev-4b/snapshots/485ace8703592fcf405488b262449990824cfed1: 496 adapter tensors and the pointer head loaded
+device=cuda trainable params=33.8M
+2334 training requests (holdout=['sev_behavioral_retry_export', 'sev_behavioral_stale_handoff', 'sev_behavioral_reconcile_export']), questions by type {'choice': 2280, 'score': 36, 'noul': 18}
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+ep0 step 10/292 loss 1.829 kl 0.000 anchor 0.000 1.503s/rec
+ep0 step 20/292 loss 1.201 kl 0.000 anchor 0.000 0.808s/rec
+ep0 step 30/292 loss 0.990 kl 0.000 anchor 0.000 0.576s/rec
+ep0 step 40/292 loss 0.972 kl 0.000 anchor 0.000 0.461s/rec
+ep0 step 50/292 loss 1.026 kl 0.000 anchor 0.000 0.391s/rec
+ep0 step 60/292 loss 1.032 kl 0.000 anchor 0.000 0.345s/rec
+ep0 step 70/292 loss 1.014 kl 0.000 anchor 0.000 0.311s/rec
+ep0 step 80/292 loss 1.008 kl 0.000 anchor 0.000 0.286s/rec
+ep0 step 90/292 loss 1.031 kl 0.000 anchor 0.000 0.266s/rec
+ep0 step 100/292 loss 0.925 kl 0.000 anchor 0.000 0.250s/rec
+ep0 step 110/292 loss 1.073 kl 0.000 anchor 0.000 0.238s/rec
+ep0 step 120/292 loss 0.969 kl 0.000 anchor 0.000 0.227s/rec
+ep0 step 130/292 loss 1.000 kl 0.000 anchor 0.000 0.218s/rec
+ep0 step 140/292 loss 1.017 kl 0.000 anchor 0.000 0.210s/rec
+ep0 step 150/292 loss 1.058 kl 0.000 anchor 0.000 0.204s/rec
+ep0 step 160/292 loss 0.966 kl 0.000 anchor 0.000 0.198s/rec
+ep0 step 170/292 loss 0.980 kl 0.000 anchor 0.000 0.193s/rec
+ep0 step 180/292 loss 0.891 kl 0.000 anchor 0.000 0.188s/rec
+ep0 step 190/292 loss 1.000 kl 0.000 anchor 0.000 0.185s/rec
+ep0 step 200/292 loss 1.057 kl 0.000 anchor 0.000 0.181s/rec
+ep0 step 210/292 loss 0.975 kl 0.000 anchor 0.000 0.178s/rec
+ep0 step 220/292 loss 0.980 kl 0.000 anchor 0.000 0.175s/rec
+ep0 step 230/292 loss 0.944 kl 0.000 anchor 0.000 0.172s/rec
+ep0 step 240/292 loss 0.952 kl 0.000 anchor 0.000 0.169s/rec
+ep0 step 250/292 loss 0.985 kl 0.000 anchor 0.000 0.167s/rec
+ep0 step 260/292 loss 0.965 kl 0.000 anchor 0.000 0.165s/rec
+ep0 step 270/292 loss 1.043 kl 0.000 anchor 0.000 0.162s/rec
+ep0 step 280/292 loss 1.008 kl 0.000 anchor 0.000 0.160s/rec
+ep0 step 290/292 loss 0.974 kl 0.000 anchor 0.000 0.158s/rec
+saved /runs/sev-r2-research-4b-v1/00-trial-0/checkpoint

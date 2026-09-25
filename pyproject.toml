@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "kev"
 version = "0.1.0"
-description = "Laptop-scale reconstruction of a Jev-style decision model with a TypeSafe-compatible /v1/systemone API"
+description = "Sev research decision-model runtime, derived from Kev, with a TypeSafe-compatible API"
 readme = "README.md"
 license = "Apache-2.0"
 license-files = ["LICENSE"]
@@ -30,9 +30,9 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/jaredpalmer/kev"
-Issues = "https://github.com/jaredpalmer/kev/issues"
-"Model cards" = "https://github.com/jaredpalmer/kev/tree/main/docs/model-cards"
+Repository = "https://github.com/maceip/Sev"
+Issues = "https://github.com/maceip/Sev/issues"
+"Model cards" = "https://github.com/maceip/Sev/tree/main/docs/model-cards"
 
 [project.optional-dependencies]
 serve = [

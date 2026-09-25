@@ -1,0 +1,11 @@
+{
+  "compared_files": 29,
+  "exact_matches": 28,
+  "differences": {
+    "pyproject.toml": {
+      "training_sha256": "7c17fbe9efcadda3eb488b59adf1b6db5938cd33af4d3bd389ce4359b73fcc7d",
+      "release_sha256": "39ec40f14c88598dee7ac98fb859a5a44e22337235a3064ebd5e89036ce81e30"
+    }
+  },
+  "explanation": "pyproject.toml changes description and project URLs only; package name and dependencies unchanged. All training/runtime Python, Modal worker, and uv.lock hashes match."
+}

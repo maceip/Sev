@@ -1,0 +1,313 @@
+{
+  "schema": "sev-research-calibrated-copy-v1",
+  "created_at": "2026-09-25T16:37:54.666347+00:00",
+  "checkpoint": "/Users/mac/Sev/runs/sev-research-release-20260925/calibrated-checkpoint",
+  "fit": {
+    "schema": "sev-research-calibration-v1",
+    "temperature": 1.9999999999999998,
+    "split": "calibration",
+    "view": "full",
+    "question": "operator_origin",
+    "method": "kev.metrics.fit_temperature",
+    "aggregation": "macro",
+    "task": "episode parent_id",
+    "points": 121,
+    "temperature_range": [
+      0.25,
+      4.0
+    ],
+    "weighting": "equal episodes, then equal windows within each episode",
+    "windows": 182,
+    "episodes": 96,
+    "groups": 32,
+    "record_ids_sha256": "46528c7e8fa5d195456afb8352b64a1393b26852a868eb58fa7aee9d41e1d93b",
+    "excluded_views": {
+      "prefix_loss": 148,
+      "sampled_loss": 152
+    },
+    "raw": {
+      "acc": 0.3342013888888889,
+      "nll": 1.0988623728398248,
+      "brier": 0.6670543370614523,
+      "ece": 0.06554797243603253
+    },
+    "calibrated": {
+      "acc": 0.3342013888888889,
+      "nll": 1.094225810223573,
+      "brier": 0.6635708549658472,
+      "ece": 0.04216089485176933
+    },
+    "cross_validation": {
+      "raw": {
+        "n": 182,
+        "ece": 0.030378155838447805,
+        "brier": 0.6564945291407126,
+        "nll": 1.0838391530675782,
+        "confident_error_rate": 0.0,
+        "coverage_at_5pct_error": 0.01098901098901099
+      },
+      "out_of_fold": {
+        "n": 182,
+        "ece": 0.02879543978652912,
+        "brier": 0.6607993702192454,
+        "nll": 1.0900062934624115,
+        "confident_error_rate": 0.0,
+        "coverage_at_5pct_error": 0.0
+      },
+      "ece_ci95": {
+        "raw": [
+          0.013784180181410588,
+          0.07820699846672471
+        ],
+        "out_of_fold": [
+          0.015176680491519571,
+          0.06251847627618651
+        ],
+        "delta": [
+          -0.045586065150116414,
+          0.03442859983142514
+        ]
+      },
+      "separated": false,
+      "temperatures": [
+        1.5511447618337346,
+        2.578740616879158,
+        1.6624757922855755,
+        2.3510958125672174,
+        2.70069989233638
+      ],
+      "folds": 5,
+      "seed": 0,
+      "samples": 1000,
+      "groups": 32,
+      "unit": "latent scenario group_id, across all original sources",
+      "fit_weighting": "equal episodes, then equal windows within each episode",
+      "canonical_metric_weighting": "windows; canonical raw/out_of_fold metrics and ECE intervals",
+      "episode_weighted": {
+        "raw": {
+          "acc": 0.3342013888888889,
+          "nll": 1.0988623728398248,
+          "brier": 0.6670543370614523,
+          "ece": 0.06554797243603253
+        },
+        "out_of_fold": {
+          "acc": 0.3342013888888889,
+          "nll": 1.0963892736496,
+          "brier": 0.6651579277109647,
+          "ece": 0.061642028028613405
+        }
+      },
+      "fold_by_group": {
+        "0a96bbbde731f77629d6": 0,
+        "0fd4a07c8a94efc8213a": 4,
+        "127dba0a0b6d112fdd60": 0,
+        "1a7d4eff40c538e9531b": 2,
+        "25f1f108010761f574ec": 0,
+        "42172cc6c0db60ca5758": 1,
+        "459d3a949d71768ba55d": 4,
+        "4c3fe25e9bd641be2ddb": 0,
+        "4c6ad83158be617c1548": 4,
+        "53c1f89988e203c21d7f": 1,
+        "635e51a0d3a3a3da2ba7": 4,
+        "7a15bda3e41ccfee7241": 1,
+        "7f573f974db9fa0d872d": 2,
+        "86f21fea379a7a9fe79e": 4,
+        "896e70c3467400fe789c": 3,
+        "89a112d154659e4b8585": 0,
+        "8de646371957ac833b8f": 2,
+        "9267379e905f6045e976": 2,
+        "9343076eec6e0c57c601": 0,
+        "95cf7a4cbfcb6a117bfc": 1,
+        "96651d23eb4107dd8e5a": 3,
+        "99fba8dee219cdf16eef": 3,
+        "9f8e8516bf49e0ec08d5": 0,
+        "a10ba4c34ba318f3829a": 3,
+        "ac1f21ab8ebefecfe315": 3,
+        "ace673b4d894d1f1740e": 2,
+        "ae5e6811a635cc23dfbd": 1,
+        "b786a1db55e5f652c1cf": 4,
+        "b8d7d7b733ad6a06fade": 2,
+        "d983184d237cd08a0327": 1,
+        "e90cd441191e7f18968b": 3,
+        "ed1a95e2dd7115022ea3": 1
+      }
+    },
+    "per_source": {
+      "sev_behavioral_artifact_handoff": {
+        "windows": 63,
+        "episodes": 24,
+        "groups": 8,
+        "record_ids_sha256": "ec2841fda8a390bd2d73d828e1d3efac393d6cc583f94188ef25588a85945877",
+        "raw": {
+          "acc": 0.34722222222222215,
+          "nll": 1.0806702183699979,
+          "brier": 0.6537004910585257,
+          "ece": 0.09166280712269316
+        },
+        "calibrated": {
+          "acc": 0.34722222222222215,
+          "nll": 1.0876702845061252,
+          "brier": 0.6589248476452055,
+          "ece": 0.04426971102023442
+        }
+      },
+      "sev_behavioral_authorized_export": {
+        "windows": 40,
+        "episodes": 24,
+        "groups": 8,
+        "record_ids_sha256": "255e72d055b44aa16ec7f11fe905f4c251fe28ced7f801120abef039c930115f",
+        "raw": {
+          "acc": 0.3333333333333333,
+          "nll": 1.104011417056653,
+          "brier": 0.6698152020985213,
+          "ece": 0.04556619047184074
+        },
+        "calibrated": {
+          "acc": 0.3333333333333333,
+          "nll": 1.0996799880244128,
+          "brier": 0.6672264414223563,
+          "ece": 0.04735674179920909
+        }
+      },
+      "sev_behavioral_lookup_catalog": {
+        "windows": 25,
+        "episodes": 24,
+        "groups": 8,
+        "record_ids_sha256": "8cd835d6e3fefa25803ffbc579240aa9c4ae264163027eaa186db00580e4b2e1",
+        "raw": {
+          "acc": 0.3333333333333333,
+          "nll": 1.0929036665832168,
+          "brier": 0.6633979694737079,
+          "ece": 0.10676289475303495
+        },
+        "calibrated": {
+          "acc": 0.3333333333333333,
+          "nll": 1.087115774278896,
+          "brier": 0.6586049595361453,
+          "ece": 0.052123650581165686
+        }
+      },
+      "sev_behavioral_update_export": {
+        "windows": 54,
+        "episodes": 24,
+        "groups": 8,
+        "record_ids_sha256": "f83b45d350186cfa47db970f9311408fbde0fb68bb884adc1a3644a36b18f52c",
+        "raw": {
+          "acc": 0.3229166666666667,
+          "nll": 1.11786418934943,
+          "brier": 0.6813036856150539,
+          "ece": 0.09059596392971296
+        },
+        "calibrated": {
+          "acc": 0.3229166666666667,
+          "nll": 1.1024371940848587,
+          "brier": 0.6695271712596828,
+          "ece": 0.060665733732341603
+        }
+      }
+    },
+    "development_read": false,
+    "test_read": false,
+    "scope": "Calibration evidence on authored simulated controllers; no field accuracy or release gate.",
+    "suite_sha256": "372d8709cce5fc50262afc5107cd4b3637614ff2b2a7e84a8ccfa4293a4b21c5",
+    "partition_sha256": "eebb5ddeb322b16bbb312ddb6927b1d71226b72e4b01d323c698d1e2a3c4f38d",
+    "predictions": {
+      "path": "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/calibration/rows.json",
+      "sha256": "00909b4d6b838c534d8d403d84a578fea1ddaac5e30a2b488c2d1c138c0d05ab"
+    },
+    "input_sha256": {
+      "/Users/mac/Sev-release-20260925/evals/sev/behavioral-research-v1/manifest.json": "372d8709cce5fc50262afc5107cd4b3637614ff2b2a7e84a8ccfa4293a4b21c5",
+      "/Users/mac/Sev-release-20260925/evals/sev/behavioral-research-v1/calibration.jsonl": "eebb5ddeb322b16bbb312ddb6927b1d71226b72e4b01d323c698d1e2a3c4f38d",
+      "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/provenance.json": "f540a4587f44f4a3bdda19f68a42377a56c56d464443beaaf8fe57b593beb85f",
+      "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/result.json": "ec4bfe6436093b6ba096921bb95b2643e8418c84d1e5cbbc596d78f2c744338c",
+      "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/calibration/rows.json": "00909b4d6b838c534d8d403d84a578fea1ddaac5e30a2b488c2d1c138c0d05ab",
+      "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/calibration/report.json": "6bee81d641d7003c7715c0b26bcec77fe244e59e847e52e7f14f7336d88f59f9",
+      "/Users/mac/Sev-release-20260925/kev/checkpoint.py": "9f1dbc5d3d7d3050aca4ee34e0578c9ad76b7a2a7467dfc7a4ad65e3c471db59",
+      "/Users/mac/Sev-release-20260925/kev/metrics.py": "db0930d470c0ce16f16dcaf726d49a7a103973a5296cefc5259d1e68707d882b",
+      "/Users/mac/Sev-release-20260925/scripts/report_sev_behavioral_round.py": "5beee8c302040233e2950ebe2d3f8944e84d6202f08b95943d679690bcdad8d8",
+      "/Users/mac/Sev-release-20260925/scripts/calibrate_sev_research.py": "f9fa4df59fda060e856f4e2a691e8fc0aeeeec836f1ddbaa43b3db5a39a874cf"
+    },
+    "source_checkpoint": "/Users/mac/Sev/runs/sev-r2-research-4b-v1/00-trial-0/checkpoint",
+    "source_files": {
+      "README.md": {
+        "sha256": "e0e50894b914f1765ef42c1eade74b42c613fb0330b06339f9502cc6f2e25e79",
+        "bytes": 5164
+      },
+      "adapter_config.json": {
+        "sha256": "8a05dfd6c5e7f61a62e6db5d8de8093a8dbbd105aa7ee7b5e7b73f6249f45617",
+        "bytes": 1271
+      },
+      "adapter_model.safetensors": {
+        "sha256": "7fc73ad5a9e219731fba6bd926ba4a683b0c67dd676810d18e1a6018fa3b887c",
+        "bytes": 129924032
+      },
+      "chat_template.jinja": {
+        "sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+        "bytes": 7756
+      },
+      "head.pt": {
+        "sha256": "af6bfd215bf0b7eff92612a83b21cb56754ca87f0bf9f62fdfcfbef275d9eab6",
+        "bytes": 5248895
+      },
+      "tokenizer.json": {
+        "sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523",
+        "bytes": 19989325
+      },
+      "tokenizer_config.json": {
+        "sha256": "8671bed7c852ce9e661be94f179a7b4ffd091c2a65aea0363e5501c20318ee45",
+        "bytes": 1128
+      },
+      "training_config.json": {
+        "sha256": "f1936818cecded5fe659330a6e0a1ad631d9b5b1eb2014982634a58f7d6f7d68",
+        "bytes": 1889
+      },
+      "training_metrics.json": {
+        "sha256": "20b9314de861f32641b4f6a16ae8b06ba273426333da40c2820e5f591936d7a7",
+        "bytes": 321
+      }
+    },
+    "source_temperature": 1.0,
+    "head_tensors": {
+      "k.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32",
+        "sha256": "b8d56826b48ca7768c910704d155b6f9368481658f4b7be5e6e87c9e3a77109a"
+      },
+      "k.weight": {
+        "shape": [
+          256,
+          2560
+        ],
+        "dtype": "torch.float32",
+        "sha256": "7caa9354998b823ae4ca2c87b849b240bf474cfb8479b43e8a34e012e1fb2d97"
+      },
+      "q.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32",
+        "sha256": "341acaf84e9296a1a6676e25789b2ce97c8632a408ea31c3a626f48e840496e4"
+      },
+      "q.weight": {
+        "shape": [
+          256,
+          2560
+        ],
+        "dtype": "torch.float32",
+        "sha256": "b32e0568a714d926fe5faef0cffc7f0215c61f0f4874e2138303a7641a4cbfca"
+      }
+    },
+    "calibration_source_sha256": {
+      "kev/checkpoint.py": "9f1dbc5d3d7d3050aca4ee34e0578c9ad76b7a2a7467dfc7a4ad65e3c471db59",
+      "kev/metrics.py": "db0930d470c0ce16f16dcaf726d49a7a103973a5296cefc5259d1e68707d882b",
+      "scripts/report_sev_behavioral_round.py": "5beee8c302040233e2950ebe2d3f8944e84d6202f08b95943d679690bcdad8d8",
+      "scripts/calibrate_sev_research.py": "f9fa4df59fda060e856f4e2a691e8fc0aeeeec836f1ddbaa43b3db5a39a874cf"
+    }
+  },
+  "output_head_sha256": "dc1f550c7914388af77e607c70fe8801558a89a3847d37ea37d3923b28521c3e",
+  "source_unchanged": true,
+  "learned_tensors_unchanged": true,
+  "adapter_unchanged": true
+}
